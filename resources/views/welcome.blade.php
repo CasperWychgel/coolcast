@@ -39,21 +39,22 @@
 
         </ul>
     </section>
-    <div class="container">
+    <div class="productcontainer">
         <section id="foodcollection">
             <ul class="">
-                <li class="coolcastlist">Testing</li>
-                <li class="coolcastlist">Testing</li>
-                <li class="coolcastlist">Testing</li>
-                <li class="coolcastlist">Testing</li>
+                <li class="coolcastlist"><h5>Boter</h5></li>
+                <li class="coolcastlist"><h5>Melk</h5></li>
+                <li class="coolcastlist"><h5>Hagelslag</h5></li>
+                <li class="coolcastlist"><h5>Eieren</h5></li>
+                <li class="coolcastlist"><h5>Kipfilet</h5></li>
             </ul>
         </section>
     </div>
-    <div class="container">
+    <div class="button-controls">
         <div class="center-align center">
-            <a class="btn-floating btn-small waves-effect waves-blue coolcastblue"><i class="material-icons">check</i></a>
-            <a class="btn-floating btn-large waves-effect waves-light coolcastdarkblue"><i class="material-icons">add</i></a>
-            <a class="btn-floating btn-small waves-effect waves-blue coolcastblue"><i class="material-icons">close</i></a>
+            <a class="btn-floating btn-small waves-effect waves-dark coolcastblue"><i class="material-icons">check</i></a>
+            <a class="btn-floating btn-large waves-effect waves-dark mainaddbtn coolcastdarkblue"><i class="material-icons">add</i></a>
+            <a class="btn-floating btn-small waves-effect waves-dark coolcastblue"><i class="material-icons">close</i></a>
         </div>
     </div>
 

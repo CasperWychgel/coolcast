@@ -10,9 +10,22 @@ body{
     border-style: hidden;
     padding: 20px;
     margin: 31px;
-    box-shadow: 0px 10px 21px grey;
+    box-shadow: 2px 3px 5px grey;
 }
-
+.button-controls{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.mainaddbtn{
+    margin: 9px;
+}
+.productcontainer{
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+}
 
 
 .coolcastgreen{
