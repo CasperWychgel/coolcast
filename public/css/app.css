@@ -1,0 +1,32 @@
+body{
+    background-color: #fffae2;
+}
+.waves-effect.waves-blue .waves-ripple {
+    background-color: #1D4A81
+}
+.coolcastlist{
+    background-color: #54AEA4 !important;
+    border-radius: 8px;
+    border-style: hidden;
+    padding: 20px;
+    margin: 31px;
+    box-shadow: 0px 10px 21px grey;
+}
+
+
+
+.coolcastgreen{
+    background-color: #54AEA4 !important;
+}
+.coolcastblue{
+    background-color: #1D4A81
+}
+.coolcastdarkblue{
+    background-color: #122A46;
+}
+.coolcastcreme{
+    background-color: #FFFAE2;
+}
+.coolcastgrey{
+    background-color: #efebe9;
+}

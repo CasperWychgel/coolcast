@@ -9,6 +9,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize/materialize.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/app.css"  media="screen,projection"/>
 
         <title>Coolcast</title>
 
@@ -17,15 +18,15 @@
     <body>
     <section id="navigation">
         <nav>
-            <div class="nav-wrapper white">
-                <a href="index.php" class="brand-logo grey-text darken-2 center"><span style="color: #94c7ff">CoolCast</span></a>
+            <div class="nav-wrapper coolcastblue">
+                <a href="index.php" class="brand-logo white-text center"><span>CoolCast</span></a>
                 <a data-target="slide-out" style="display: block" class="sidenav-trigger"><i style="color: black" class="material-icons ">menu</i></a>
             </div>
         </nav>
 
         <ul id="slide-out" class="sidenav" style="transform: translateX(-105%);">
             <li><div class="user-view">
-                    <div class="background" style="background-color: #94c7ff"></div>
+                    <div class="background coolcastblue"></div>
                     <a><img class="circle" src="img/logo/Fridge.svg"></a>
                     <a><span class="white-text name">CoolCast</span></a>
                     <a href=""><span class="white-text email">info@coolcast.nl</span></a>
@@ -38,100 +39,24 @@
 
         </ul>
     </section>
+    <div class="container">
+        <section id="foodcollection">
+            <ul class="">
+                <li class="coolcastlist">Testing</li>
+                <li class="coolcastlist">Testing</li>
+                <li class="coolcastlist">Testing</li>
+                <li class="coolcastlist">Testing</li>
+            </ul>
+        </section>
+    </div>
+    <div class="container">
+        <div class="center-align center">
+            <a class="btn-floating btn-small waves-effect waves-blue coolcastblue"><i class="material-icons">check</i></a>
+            <a class="btn-floating btn-large waves-effect waves-light coolcastdarkblue"><i class="material-icons">add</i></a>
+            <a class="btn-floating btn-small waves-effect waves-blue coolcastblue"><i class="material-icons">close</i></a>
+        </div>
+    </div>
 
-    <section id="foodcollection">
-        <ul class="collection">
-            <li class="collection-item avatar">
-                <i class="material-icons circle light-blue">fastfood</i>
-                <span class="title">Food example</span>
-                <p>Lorem ipsum <br>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle light-blue">fastfood</i>
-                <span class="title">Food example</span>
-                <p>Lorem ipsum <br>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle light-blue">fastfood</i>
-                <span class="title">Food example</span>
-                <p>Lorem ipsum <br>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle light-blue">fastfood</i>
-                <span class="title">Food example</span>
-                <p>Lorem ipsum <br>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle light-blue">fastfood</i>
-                <span class="title">Food example</span>
-                <p>Lorem ipsum <br>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle light-blue">fastfood</i>
-                <span class="title">Food example</span>
-                <p>Lorem ipsum <br>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle light-blue">fastfood</i>
-                <span class="title">Food example</span>
-                <p>Lorem ipsum <br>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle light-blue">fastfood</i>
-                <span class="title">Food example</span>
-                <p>Lorem ipsum <br>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle light-blue">fastfood</i>
-                <span class="title">Food example</span>
-                <p>Lorem ipsum <br>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle light-blue">fastfood</i>
-                <span class="title">Food example</span>
-                <p>Lorem ipsum <br>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle light-blue">fastfood</i>
-                <span class="title">Food example</span>
-                <p>Lorem ipsum <br>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-
-        </ul>
-    </section>
 
 
     <script type="text/javascript" src="js/materialize/materialize.min.js"></script>
