@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <!--Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <!--Import Google Icon Font-->
@@ -39,22 +39,24 @@
 
         </ul>
     </section>
-    <div class="productcontainer">
-        <section id="foodcollection">
-            <ul class="">
-                <li class="coolcastlist"><h5>Boter</h5></li>
-                <li class="coolcastlist"><h5>Melk</h5></li>
-                <li class="coolcastlist"><h5>Hagelslag</h5></li>
-                <li class="coolcastlist"><h5>Eieren</h5></li>
-                <li class="coolcastlist"><h5>Kipfilet</h5></li>
-            </ul>
-        </section>
+    <div class="">
+        <div class="collection with-header"style="margin-top: 0px;">
+            <a href="#!" class="collection-item"><span class="badge">26-10-19</span>Boter</a>
+            <a href="#!" class="collection-item"><span class="badge">19-10-19</span>Melk</a>
+            <a href="#!" class="collection-item"><span class="badge">28-12-19</span>Hagelslag</a>
+            <a href="#!" class="collection-item"><span class="badge">24-10-19</span>Eieren</a>
+            <a href="#!" class="collection-item"><span class="badge">30-10-19</span>Kipfilet</a>
+            <a href="#!" class="collection-item"><span class="badge">18-10-19</span>Chorizo</a>
+            <a href="#!" class="collection-item"><span class="badge">23-10-19</span>Boter</a>
+            <a href="#!" class="collection-item"><span class="badge">21-10-19</span>Melk</a>
+            <a href="#!" class="collection-item"><span class="badge">17-11-19</span>Hagelslag</a>
+        </div>
     </div>
     <div class="button-controls">
         <div class="center-align center">
-            <a class="btn-floating btn-small waves-effect waves-dark coolcastblue"><i class="material-icons">check</i></a>
-            <a class="btn-floating btn-large waves-effect waves-dark mainaddbtn coolcastdarkblue"><i class="material-icons">add</i></a>
-            <a class="btn-floating btn-small waves-effect waves-dark coolcastblue"><i class="material-icons">close</i></a>
+            <a class="btn-floating btn-small waves-effect waves-light coolcastblue"><i class="material-icons">check</i></a>
+            <a href="/add" class="btn-floating btn-large waves-effect waves-light mainaddbtn coolcastdarkblue"><i class="material-icons">add</i></a>
+            <a class="btn-floating btn-small waves-effect waves-light coolcastblue"><i class="material-icons">close</i></a>
         </div>
     </div>
 
