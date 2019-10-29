@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 
 class productscontroller extends Controller
 {
-    public function show($product)
+    public function show($name)
     {
-        $product = \DB::table('products');
+        $product = \DB::table('products')->where('name',$name)->first();
+
+        dd
     }
 }
