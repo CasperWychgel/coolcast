@@ -1,3 +1,4 @@
+
 @extends ('layout')
 
 @section('navigation')
@@ -28,7 +29,15 @@
 
     <div class="">
         <div class="collection with-header"style="margin-top: 0px;">
-            <a href="#!" class="collection-item"><span class="badge">26-10-19</span>Boter</a>
+
+            @foreach ($products as $product)
+                <a href="#!" class="collection-item"><span class="badge">26-10-19</span>{{$product->name}}</a>
+            @endforeach
+
+
+
+
+
         </div>
     </div>
 

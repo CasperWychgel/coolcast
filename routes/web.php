@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+route::get('/welcome','productscontroller@index');
+
 Route::get('/add', function () {
     return view('crud.add');
 });
+route::get('/add','productscontroller@index');
