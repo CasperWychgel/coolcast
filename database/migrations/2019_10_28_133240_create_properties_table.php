@@ -15,6 +15,7 @@ class CreatePropertiesTable extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('products_id');
             $table->integer('quantity');
             $table->date('expiration_date');
             $table->timestamps();

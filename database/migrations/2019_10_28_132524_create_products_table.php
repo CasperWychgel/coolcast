@@ -17,8 +17,8 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 40);
 
-            $table->unsignedBigInteger('property_id');
-            $table->unsignedBigInteger('location_id');
+            $table->unsignedBigInteger('properties_id');
+            $table->unsignedBigInteger('locations_id');
 
             $table->timestamps();
         });

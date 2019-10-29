@@ -4,13 +4,20 @@ namespace App\Http\Controllers;
 
 use App\products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class productscontroller extends Controller
 {
-    public function show($name)
+    /**
+     * Show a list of all of the application's products.
+     *
+     * return Response
+     */
+    public function index()
     {
-        $product = \DB::table('products')->where('name',$name)->first();
-
-        dd
+    //    $products =DB::table('products')->get();
+        return view('welcome', [
+            'products' => Products::with('properties')->get()
+        ]);
     }
 }
