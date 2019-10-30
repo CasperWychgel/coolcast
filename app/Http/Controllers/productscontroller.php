@@ -16,7 +16,7 @@ class productscontroller extends Controller
     public function index()
     {
     //    $products =DB::table('products')->get();
-        return view('welcome', [
+        return view('products.index', [
             'products' => Products::with('properties')->get()
         ]);
     }

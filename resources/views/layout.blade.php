@@ -14,8 +14,32 @@
 </head>
 
 <body>
+<nav>
+    <div class="nav-wrapper coolcastblue">
+        <a href="/" class="brand-logo white-text center"><span>CoolCast</span></a>
+        <a data-target="mobile" class="sidenav-trigger"><i style="color: white" class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="">Keuken</a></li>
+            <li><a href="">Voorraadkast</a></li>
+            <li><a href="">Bijkeuken</a></li>
+        </ul>
+    </div>
+</nav>
 
-@yield ('navigation')
+<ul class="sidenav" id="mobile">
+    <li>
+        <div class="user-view">
+            <div class="background coolcastblue"></div>
+            <a><img class="circle" src="img/logo/Fridge.svg"></a>
+            <a><span class="white-text name">CoolCast</span></a>
+            <a href=""><span class="white-text email">info@coolcast.nl</span></a>
+        </div>
+    </li>
+    <li><a class="subheader">Your locations</a></li>
+    <li><a href="">Keuken</a></li>
+    <li><a href="">Voorraadkast</a></li>
+    <li><a href="">Bijkeuken</a></li>
+</ul>
 
 @yield ('content')
 

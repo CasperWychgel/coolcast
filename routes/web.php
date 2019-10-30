@@ -12,7 +12,5 @@
 */
 
 Route::get('/','productscontroller@index');
-
-Route::get('/add',function (){
-    return view('crud.add');
-});
+Route::get('/add','createproductscontroller@index');
+Route::post('/add','createproductscontroller@store');
