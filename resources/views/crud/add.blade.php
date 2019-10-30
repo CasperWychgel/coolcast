@@ -4,7 +4,7 @@
 
     <nav>
         <div class="nav-wrapper coolcastblue">
-            <a href="index.php" class="brand-logo white-text center"><span>CoolCast</span></a>
+            <a href="index.php" class="brand-logo white-text center"><span>Add</span></a>
             <a data-target="slide-out" style="display: block" class="sidenav-trigger"><i style="color: black" class="material-icons ">menu</i></a>
         </div>
     </nav>

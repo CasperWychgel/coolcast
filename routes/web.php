@@ -13,4 +13,6 @@
 
 Route::get('/','productscontroller@index');
 
-Route::get('/add','productscontroller@index');
+Route::get('/add',function (){
+    return view('crud.add');
+});
