@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Locations;
+use App\Location;
 
 class locationscontroller extends Controller
 {
@@ -15,7 +15,7 @@ class locationscontroller extends Controller
     {
         //    $products =DB::table('products')->get();
         return view('products.add', [
-            'locations' => Locations::all()
+            'locations' => Location::all()
         ]);
     }
 }

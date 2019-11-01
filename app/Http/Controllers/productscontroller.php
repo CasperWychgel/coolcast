@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\products;
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,7 +17,7 @@ class productscontroller extends Controller
     {
     //    $products =DB::table('products')->get();
         return view('products.index', [
-            'products' => Products::with('properties')->get()
+            'products' => Product::with('properties')->get()
         ]);
     }
 }
