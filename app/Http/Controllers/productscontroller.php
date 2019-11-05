@@ -17,7 +17,7 @@ class productscontroller extends Controller
     {
     //    $products =DB::table('products')->get();
         return view('products.index', [
-            'products' => Product::with('properties')->get()
+            'products' => Product::all()
         ]);
     }
 }
