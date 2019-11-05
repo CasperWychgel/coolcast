@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/','productscontroller@index');
-Route::get('/add','createproductscontroller@index');
-Route::post('/add','createproductscontroller@store');
+Route::get('/','productscontroller@indexshow');
+Route::get('/add','productscontroller@index');
+Route::post('/add','productscontroller@store');

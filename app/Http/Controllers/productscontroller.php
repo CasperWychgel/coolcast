@@ -2,22 +2,44 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
+use App\Property;
 use Illuminate\Http\Request;
+use App\Location;
+use App\Product;
 use Illuminate\Support\Facades\DB;
 
 class productscontroller extends Controller
 {
-    /**
-     * Show a list of all of the application's products.
-     *
-     * return Response
-     */
-    public function index()
+    public function indexshow()
     {
-    //    $products =DB::table('products')->get();
+        //    $products =DB::table('products')->get();
         return view('products.index', [
             'products' => Product::all()
         ]);
+    }
+
+    public function index()
+    {
+        return view('products.create', [
+            'locations' => Location::all()
+        ]);
+    }
+
+    public function create()
+    {
+        return view('products.create');
+    }
+
+    public function store()
+    {
+        $product = new Product();
+
+        $product->name = \request('name');
+        $product->expiration_date = \request('expiration_date');
+        $product->location_id = \request('location');
+
+        //dd($product);
+
+        $product->save();
     }
 }
