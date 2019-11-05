@@ -38,11 +38,11 @@ class productscontroller extends Controller
 
         $expiration_date = request('expiration_date');
         $product->expiration_date = date("Y/m/d", strtotime($expiration_date));
-        
+
         $product->location_id = request('location');
 
-        //dd($product);
-
         $product->save();
+
+        return redirect('/');
     }
 }
