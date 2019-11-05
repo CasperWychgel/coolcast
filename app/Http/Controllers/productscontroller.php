@@ -34,11 +34,12 @@ class productscontroller extends Controller
     {
         $product = new Product();
 
-        $product->name = \request('name');
+        $product->name = request('name');
 
-        $expiration_date = $product->expiration_date;
-        $product->expiration_date = date("Y-m-d", strtotime($expiration_date));
-        $product->location_id = \request('location');
+        $expiration_date = request('expiration_date');
+        $product->expiration_date = date("Y/m/d", strtotime($expiration_date));
+        
+        $product->location_id = request('location');
 
         //dd($product);
 
