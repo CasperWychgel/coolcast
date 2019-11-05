@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     /**
-     * Get the Property record associated with the product.
+     * Get the Location record associated with the product.
      */
-    public function properties()
+    public function locations()
     {
-        return $this->hasOne('App\Property');
+        return $this->hasOne('App\Location');
     }
 }

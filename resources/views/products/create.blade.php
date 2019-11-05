@@ -30,14 +30,9 @@
                     </div>
                 </div>
                 <div class="row">
-                    <p class="center-align col push-s1 s10 range-field">
-                        <input type="range" name="quantity" min="1" max="100" />
-                    </p>
-                </div>
-                <div class="row">
                     <div class="input-field col push-s1 s10">
-                        <input type="text" name="date" class="datepicker">
-                        <label for="date">Pick a date</label>
+                        <input type="text" name="expiration_date" id="datepicker" class="datepicker">
+                        <label for="date">Pick a expiration date</label>
                     </div>
                 </div>
                 <div class="input-field col push-s1 s10">

@@ -24,6 +24,14 @@ class createproductscontroller extends Controller
 
     public function store()
     {
-        return request()->all();
+        $product = new Product();
+
+        $product->name = \request('name');
+        $product->expiration_date = \request('expiration_date');
+        $product->location_id = \request('location');
+
+        //dd($product);
+
+        $product->save();
     }
 }
