@@ -16,9 +16,8 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 40);
-
-            $table->unsignedBigInteger('properties_id');
-            $table->unsignedBigInteger('locations_id');
+            $table->unsignedBigInteger('location_id');
+            $table->date('expiration_date');
 
             $table->timestamps();
         });

@@ -16,7 +16,7 @@ class CreateLocationusersTable extends Migration
         Schema::create('locationusers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('users_id');
-            $table->unsignedBigInteger('locations_id');
+            $table->unsignedBigInteger('location_id');
 
             $table->timestamps();
         });

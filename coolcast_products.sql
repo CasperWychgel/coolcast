@@ -1,0 +1,3 @@
+INSERT INTO coolcast.products (id, name, location_id, expiration_date, created_at, updated_at) VALUES (1, 'Bananen', 1, '2019-11-09', '2019-10-29 21:29:09', '2019-10-29 21:29:10');
+INSERT INTO coolcast.products (id, name, location_id, expiration_date, created_at, updated_at) VALUES (2, 'Appels', 1, '2019-11-29', '2019-10-29 21:47:54', '2019-10-29 21:47:55');
+INSERT INTO coolcast.products (id, name, location_id, expiration_date, created_at, updated_at) VALUES (3, 'Pannenkoeken', 1, '2011-06-23', '2019-10-29 22:33:25', '2019-10-29 22:33:27');

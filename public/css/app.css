@@ -1,5 +1,5 @@
 body{
-    background-color: #fffae2;
+    background-color: rgba(50, 185, 202, 0.11);
 }
 .waves-effect.waves-blue .waves-ripple {
     background-color: #1D4A81
@@ -12,12 +12,14 @@ body{
     margin: 31px;
     box-shadow: 2px 3px 5px grey;
 }
-.button-controls{
+.bottom-navbar {
+    background-color: #ffffff;
     position: fixed;
     bottom: 0;
     width: 100%;
-    margin-bottom: 10px;
+    z-index: 2;
 }
+
 .mainaddbtn{
     margin: 9px;
 }
@@ -27,7 +29,6 @@ body{
     width: 100%;
 }
 
-
 .coolcastgreen{
     background-color: #54AEA4 !important;
 }
@@ -36,10 +37,4 @@ body{
 }
 .coolcastdarkblue{
     background-color: #122A46;
-}
-.coolcastcreme{
-    background-color: #FFFAE2;
-}
-.coolcastgrey{
-    background-color: #efebe9;
 }

@@ -1,0 +1,1 @@
+INSERT INTO coolcast.locationusers (id, users_id, location_id, created_at, updated_at) VALUES (1, 1, 1, '2019-10-29 21:28:34', '2019-10-29 21:28:35');
