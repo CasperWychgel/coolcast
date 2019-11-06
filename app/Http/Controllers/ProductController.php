@@ -8,9 +8,9 @@ use App\Location;
 use App\Product;
 use Illuminate\Support\Facades\DB;
 
-class productscontroller extends Controller
+class ProductController extends Controller
 {
-    public function indexshow()
+    public function index()
     {
         //    $products =DB::table('products')->get();
         return view('products.index', [
@@ -18,17 +18,17 @@ class productscontroller extends Controller
         ]);
     }
 
-    public function index()
+    public function create()
     {
         return view('products.create', [
             'locations' => Location::all()
         ]);
     }
 
-    public function create()
+/*    public function create()
     {
         return view('products.create');
-    }
+    }*/
 
     public function store()
     {

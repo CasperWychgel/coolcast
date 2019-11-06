@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="input-field col push-s1 s10">
                         <input type="text" name="expiration_date" id="datepicker" class="datepicker">
-                        <label for="date">Pick a expiration date</label>
+                        <label for="date">Pick an expiration date</label>
                     </div>
                 </div>
                 <div class="input-field col push-s1 s10">

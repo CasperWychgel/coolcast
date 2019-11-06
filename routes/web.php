@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/','productscontroller@indexshow');
-Route::get('/add','productscontroller@index');
-Route::post('/add','productscontroller@store');
+Route::get('/','ProductController@index');
+Route::get('/add','ProductController@create');
+Route::post('/add','ProductController@store');
+
+Route::get('/locations', 'LocationController@index');
+Route::get('/locations/{id}', 'LocationController@show');
+Route::get('locations/add', 'LocationController@create');
+Route::post('locations/add', 'LocationController@store');

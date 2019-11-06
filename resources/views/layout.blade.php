@@ -14,11 +14,13 @@
 </head>
 
 <body>
+
 @include('partials._nav')
 
 @yield ('content')
 
 <script type="text/javascript" src="js/materialize/materialize.min.js"></script>
 <script type="text/javascript" src="js/init.js"></script>
+
 </body>
 </html>
