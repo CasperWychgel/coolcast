@@ -12,7 +12,7 @@
 */
 
 Route::get('/','ProductController@index');
-Route::get('/add','ProductController@create');
+Route::get('/add','ProductController@create')->name('add');
 Route::post('/add','ProductController@store');
 
 Route::get('/locations', 'LocationController@index');
