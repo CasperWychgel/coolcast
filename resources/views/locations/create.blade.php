@@ -2,6 +2,8 @@
 
 @section('content')
 
+    <h1>Je moeder</h1>
+
 <div class="container scrolling z-depth-1 white">
     <div class="row">
         <form id="createform" method="POST" action="./add" class="col s12">

@@ -5,7 +5,7 @@
 
     <div class="collection with-header"style="margin-top: 0px;">
         @foreach ($locations as $location)
-            <a class="collection-item">{{$location->name}}</a>
+            <a href="/locations/{{ $location->id }}" class="collection-item">{{$location->name}}</a>
         @endforeach
     </div>
 

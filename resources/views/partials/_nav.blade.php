@@ -8,12 +8,12 @@
 <ul id="slide-out" class="sidenav" style="transform: translateX(-105%);">
     <li><div class="user-view">
             <div class="background coolcastblue"></div>
-            <a><img class="circle" src="img/logo/Fridge.svg"></a>
+            <a><img class="circle" src="../img/logo/Fridge.svg"></a>
             <a><span class="white-text name">CoolCast</span></a>
             <a href=""><span class="white-text email">info@coolcast.nl</span></a>
         </div></li>
     <li><a class="subheader">Your locations </a></li>
 @foreach($locations as $location)
-    <li><a href="/{{ $location->id }}">{{ $location->name }}</a></li>
+    <li><a href="/locations/{{ $location->id }}">{{ $location->name }}</a></li>
     @endforeach
 </ul>

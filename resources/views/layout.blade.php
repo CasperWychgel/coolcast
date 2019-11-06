@@ -8,8 +8,9 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize/materialize.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="css/app.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../css/materialize/materialize.css"  media="screen,projection"/>
+
+    <link type="text/css" rel="stylesheet" href="../css/app.css"  media="screen,projection"/>
     <title>Coolcast</title>
 </head>
 
@@ -19,8 +20,9 @@
 
 @yield ('content')
 
-<script type="text/javascript" src="js/materialize/materialize.min.js"></script>
-<script type="text/javascript" src="js/init.js"></script>
+
+<script type="text/javascript" src="../js/materialize/materialize.min.js"></script>
+<script type="text/javascript" src="../js/init.js"></script>
 
 </body>
 </html>
