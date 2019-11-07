@@ -12,8 +12,8 @@
             <a><span class="white-text name">CoolCast</span></a>
             <a href=""><span class="white-text email">info@coolcast.nl</span></a>
         </div></li>
-    <li><a class="subheader">Your locations </a></li>
-@foreach($locations as $location)
-    <li><a href="/locations/{{ $location->id }}">{{ $location->name }}</a></li>
+    <li><a class="subheader">Your locations</a></li>
+    @foreach($locations as $location)
+        <li><a href="/locations/{{ $location->id }}">{{ $location->name }}</a></li>
     @endforeach
 </ul>
