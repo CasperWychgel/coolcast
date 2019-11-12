@@ -33,16 +33,19 @@ class ProductController extends Controller
     public function store()
     {
         $product = new Product();
+        $today = date('Y-m-d H:i:s');
+        $expiration_date = request('expiration_date');
 
         $product->name = request('name');
-
-        $expiration_date = request('expiration_date');
         $product->expiration_date = date("Y/m/d", strtotime($expiration_date));
-
         $product->location_id = request('location');
-
         $product->save();
 
-        return redirect('/');
+        if($expiration_date > $today ) {
+            return redirect('/')
+                ->with('error','Het ingevoerde product is over de datum');
+        } else {
+            return redirect('/');
+        }
     }
 }
