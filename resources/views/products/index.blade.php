@@ -4,6 +4,9 @@
 
     <div class="collection with-header"style="margin-top: 0px;">
         @foreach ($products as $product)
+            <form>
+                <input type="checkbox">
+            </form>
             <a class="collection-item"><span class="badge">{{$product->expiration_date}}</span>{{$product->name}}</a>
         @endforeach
     </div>

@@ -13,7 +13,6 @@ body{
     box-shadow: 2px 3px 5px grey;
 }
 .bottom-navbar {
-    background-color: #ffffff;
     position: fixed;
     bottom: 0;
     width: 100%;

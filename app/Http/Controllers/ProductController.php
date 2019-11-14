@@ -30,7 +30,7 @@ class ProductController extends Controller
         return view('products.create');
     }*/
 
-    public function store()
+    public function store(Request $request)
     {
         $product = new Product();
         $today = date('Y-m-d H:i:s');
@@ -39,13 +39,20 @@ class ProductController extends Controller
         $product->name = request('name');
         $product->expiration_date = date("Y/m/d", strtotime($expiration_date));
         $product->location_id = request('location');
-        $product->save();
+
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'expiration_date' => 'required',
+        ]);
+
+        $product->save($validatedData);
 
         if($expiration_date > $today ) {
             return redirect('/')
                 ->with('error','Het ingevoerde product is over de datum');
         } else {
-            return redirect('/');
+            return redirect('/')
+                ->with('succes','Uw product is toegevoegd aan de locatie');
         }
     }
 }

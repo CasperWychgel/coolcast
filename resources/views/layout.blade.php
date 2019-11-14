@@ -18,8 +18,6 @@
 
 @include('partials._nav')
 
-@include('flash-message')
-
 @yield ('content')
 
 
