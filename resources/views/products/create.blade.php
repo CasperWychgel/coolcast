@@ -31,8 +31,10 @@
                 </div>
                 <div class="row">
                     <div class="input-field col push-s1 s10">
-                        <input type="text" name="expiration_date" id="datepicker" class="datepicker">
-                        <label for="date">Pick an expiration date</label>
+                    <div class="col-xs-6">
+					<input readonly class="form-control" name="expiration_date" type="text" id="example" placeholder="Pick an expiration date">
+				</div>
+                        
                     </div>
                 </div>
                 <div class="input-field col push-s1 s10">
@@ -61,6 +63,63 @@
         <a class="btn-floating btn-large waves-effect waves-light mainaddbtn coolcastdarkblue"><i class="material-icons">add</i></a>
         <a class="btn-floating btn-small waves-effect waves-light coolcastblue"><i class="material-icons">close</i></a>
     </div>
+    <script>
+		window.onload = function() {
 
+            new Rolldate({
+    el: '#example',
+    format: 'DD-MMM-YYYY'
+})
+new Rolldate({
+    el: '#example',
+    minStep: 3
+})
+new Rolldate({
+    el: '#example',
+    beginYear: 2019,
+    endYear: 2100
+})
+new Rolldate({
+    el: '#example',
+    trigger: 'tap'
+})
+new Rolldate({
+    el: '#example',
+    lang: { 
+      title: 'Select A Date', 
+      cancel: 'Cancel', 
+      confirm: 'Confirm', 
+      year: '', 
+      month: '', 
+      day: '', 
+      hour: '', 
+      min: '', 
+      sec: '' 
+    }
+})
+new Rolldate({
+    el: '#example',
+    init: function() {
+      console.log('On init');
+    },
+    moveEnd: function(scroll) {
+      console.log(scroll)
+      console.log('scroll end');
+    },
+    confirm: function(date) {
+      console.log(date)
+      console.log('confirm');
+    },
+    cancel: function() {
+      console.log('cancel');
+    }
+})
+new Rolldate({
+    el: '#example',
+    value: '2017-10-21 23:52:50'
+})
+
+		}
+	</script>
 
 @endsection
