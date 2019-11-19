@@ -1,2 +1,3 @@
 INSERT INTO coolcast.locations (id, name, created_at, updated_at) VALUES (1, 'Voorraadkast', '2019-10-29 21:26:18', '2019-10-29 21:26:19');
 INSERT INTO coolcast.locations (id, name, created_at, updated_at) VALUES (2, 'Koelkast', '2019-09-29 21:26:18', '2019-09-29 21:26:19');
+INSERT INTO coolcast.locations (id, name, created_at, updated_at) VALUES (2, 'Vriezer', '2019-09-29 21:27:18', '2019-09-29 21:27:19');

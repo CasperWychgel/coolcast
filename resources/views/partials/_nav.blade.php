@@ -1,4 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <a class="navbar-brand" href="/">
+        <img src="../img/logo/Fridge.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        Coolcast
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

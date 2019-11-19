@@ -1,3 +1,6 @@
-INSERT INTO coolcast.products (id, name, location_id, expiration_date, created_at, updated_at) VALUES (1, 'Bananen', 1, '2019-11-09', '2019-10-29 21:29:09', '2019-10-29 21:29:10');
-INSERT INTO coolcast.products (id, name, location_id, expiration_date, created_at, updated_at) VALUES (2, 'Appels', 1, '2019-11-29', '2019-10-29 21:47:54', '2019-10-29 21:47:55');
-INSERT INTO coolcast.products (id, name, location_id, expiration_date, created_at, updated_at) VALUES (3, 'Pannenkoeken', 1, '2011-06-23', '2019-10-29 22:33:25', '2019-10-29 22:33:27');
+INSERT INTO coolcast.products (id, name, `expires-after`) VALUES (1, 'De Zaanse Hoeve Yoghurt Griekse stijl', 8);
+INSERT INTO coolcast.products (id, name, `expires-after`) VALUES (2, 'De Zaanse Hoeve Kaas mild 45+', 6);
+INSERT INTO coolcast.products (id, name, `expires-after`) VALUES (3, 'AH Scharreleieren klasse M', 14);
+INSERT INTO coolcast.products (id, name, `expires-after`) VALUES (4, 'AH Aardappelpartjes', 7);
+INSERT INTO coolcast.products (id, name, `expires-after`) VALUES (5, 'Ben & Jerry''s ijs cookie dough', 9);
+INSERT INTO coolcast.products (id, name, `expires-after`) VALUES (6, 'Dr. Oetker Ristorante pizza mozzarella', 8);

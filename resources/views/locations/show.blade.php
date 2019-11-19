@@ -2,8 +2,9 @@
 
 @section('content')
     <div>
-        @foreach ($products as $product)
-            <a><span>{{$product->expiration_date}}</span>{{$product->name}}</a>
+        @foreach ($invproducts as $invproduct)
+            <a><span>{{$invproduct->expiration_date}}</span>{{$invproduct->name}}</a>
+            <br>
         @endforeach
     </div>
 @endsection
