@@ -21,13 +21,12 @@
 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Location</label>
+                        <label class="input-group-text" for="inputGroupSelect02">Location</label>
                     </div>
-                    <select name="location" class="custom-select" id="inputGroupSelect01">
+                    <select name="location" class="custom-select" id="inputGroupSelect02">
                         @foreach ($locations as $location)
                             <option value="{{$location->id}}">{{$location->name}}</option>
                         @endforeach
-
                     </select>
                 </div>
 
