@@ -1,19 +1,19 @@
-<nav>
-    <div class="nav-wrapper coolcastblue">
-        <a href="/" class="brand-logo white-text center"><span>CoolCast</span></a>
-        <a data-target="slide-out" style="display: block" class="sidenav-trigger"><i  class="material-icons white-text">menu</i></a>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            @foreach($locations as $location)
+                <li class="nav-item">
+                    <a class="nav-link" href="/locations/{{ $location->id }}">{{ $location->name }}</a>
+                </li>
+            @endforeach
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
     </div>
 </nav>
-
-<ul id="slide-out" class="sidenav" style="transform: translateX(-105%);">
-    <li><div class="user-view">
-            <div class="background coolcastblue"></div>
-            <a><img class="circle" src="../img/logo/Fridge.svg"></a>
-            <a><span class="white-text name">CoolCast</span></a>
-            <a href=""><span class="white-text email">info@coolcast.nl</span></a>
-        </div></li>
-    <li><a class="subheader">Your locations </a></li>
-@foreach($locations as $location)
-    <li><a href="/locations/{{ $location->id }}">{{ $location->name }}</a></li>
-    @endforeach
-</ul>
