@@ -13,10 +13,10 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('inventoryproducts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 40);
-            $table->integer('expires-after');
+            $table->bigInteger('location_id');
         });
     }
 

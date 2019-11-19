@@ -1,14 +1,9 @@
 @extends ('layout')
 
 @section('content')
-
-{{--
-    @php(dd($products))
---}}
-
-    <div class="collection with-header"style="margin-top: 0px;">
+    <div>
         @foreach ($products as $product)
-            <a class="collection-item"><span class="badge">{{$product->expiration_date}}</span>{{$product->name}}</a>
+            <a><span>{{$product->expiration_date}}</span>{{$product->name}}</a>
         @endforeach
     </div>
 
