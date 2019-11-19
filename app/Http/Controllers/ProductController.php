@@ -48,6 +48,9 @@ class ProductController extends Controller
         ]);
 
         $product->save($validatedData);*/
+        $today = date('Y-m-d H:i:s');
+        $expiration_date = request('expiration_date');
+
         $invproduct = new Inventoryproduct();
 
         $invproduct->name = request('name');
