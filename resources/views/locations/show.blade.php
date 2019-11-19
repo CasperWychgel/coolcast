@@ -1,10 +1,14 @@
 @extends ('layout')
 
 @section('content')
-    <div>
-        @foreach ($invproducts as $invproduct)
-            <a><span>{{$invproduct->expiration_date}}</span>{{$invproduct->name}}</a>
-            <br>
-        @endforeach
+    <div class="card" style="width: 100%;">
+        <div class="card-header">
+            Your products
+        </div>
+        <ul class="list-group list-group-flush">
+            @foreach ($invproducts as $invproduct)
+                <li class="list-group-item">{{$invproduct->name}}</li>
+            @endforeach
+        </ul>
     </div>
 @endsection

@@ -30,7 +30,7 @@ class LocationController extends Controller
 
     public function show($id) {
         return view('locations.show', [
-            'invproducts' =>Inventoryproduct::where('location_id', $id)->get()
+            'invproducts' =>Inventoryproduct::where('location_id', $id)->get(),
         ]);
     }
 }
