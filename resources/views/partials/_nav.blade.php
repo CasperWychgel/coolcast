@@ -4,6 +4,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li><a class="nav-link" href="/">All</a></li>
             @foreach($locations as $location)
                 <li class="nav-item">
                     <a class="nav-link" href="/locations/{{ $location->id }}">{{ $location->name }}</a>
