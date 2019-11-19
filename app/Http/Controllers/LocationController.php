@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Inventoryproduct;
 use App\Property;
 use Illuminate\Http\Request;
 use App\Location;
@@ -29,7 +30,7 @@ class LocationController extends Controller
 
     public function show($id) {
         return view('locations.show', [
-            'products' => Product::where('location_id', $id)->get()
+            'products' =>Inventoryproduct::where('location_id', $id)->get()
         ]);
     }
 }

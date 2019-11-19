@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Inventoryproduct;
 use App\Property;
 use Illuminate\Http\Request;
 use App\Location;
@@ -14,14 +15,15 @@ class ProductController extends Controller
     {
         //    $products =DB::table('products')->get();
         return view('products.index', [
-            'products' => Product::all()
+            'invproducts' => Inventoryproduct::all()
         ]);
     }
 
     public function create()
     {
         return view('products.create', [
-            'locations' => Location::all()
+            'locations' => Location::all(),
+            'products' => Product::all()
         ]);
     }
 
@@ -32,16 +34,13 @@ class ProductController extends Controller
 
     public function store()
     {
-        $product = new Product();
+        $invproduct = new Inventoryproduct();
 
-        $product->name = request('name');
+        $invproduct->name = request('name');
 
-        $expiration_date = request('expiration_date');
-        $product->expiration_date = date("Y/m/d", strtotime($expiration_date));
+        $invproduct->location_id = request('location');
 
-        $product->location_id = request('location');
-
-        $product->save();
+        $invproduct->save();
 
         return redirect('/');
     }

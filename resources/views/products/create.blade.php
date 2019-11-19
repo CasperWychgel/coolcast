@@ -8,10 +8,11 @@
                 {{csrf_field()}}
 
                 <p>What is the product called?</p>
-                <input placeholder="Product name" name="name" type="text" class="validate">
-
-                <input type="text" name="expiration_date" id="datepicker" class="datepicker">
-                <label for="datepicker">Pick an expiration date</label>
+                <select name="name">
+                    @foreach ($products as $product)
+                        <option value="{{$product->name}}">{{$product->name}}</option>
+                    @endforeach
+                </select>
 
 
                 <select name="location">
