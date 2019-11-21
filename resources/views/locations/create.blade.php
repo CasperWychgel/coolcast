@@ -1,20 +1,15 @@
 @extends ('layout')
 
 @section('content')
-
-<div class="container scrolling z-depth-1 white">
-
-    <form id="createform" method="POST" action="./add">
+    <form id="" method="POST" action="/locations/add" >
         {{csrf_field()}}
 
         <p>What is the location called?</p>
-        <input placeholder="Location name" name="name" type="text" class="validate">
 
+        <input name="name" list="brow" placeholder="Product">
 
-        <button class="" type="submit" name="action">Submit
-
-        </button>
+        <div class="">
+            <button class="" type="submit" name="action">Submit</button>
+        </div>
     </form>
-</div>
-
 @endsection

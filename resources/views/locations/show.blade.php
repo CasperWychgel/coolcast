@@ -1,7 +1,6 @@
 @extends ('layout')
 
 @section('content')
-
     <div class="">
         <ul class="list-group m-3">
             @foreach ($invproducts as $invproduct)
@@ -11,5 +10,4 @@
             @endforeach
         </ul>
     </div>
-
 @endsection
