@@ -18,6 +18,12 @@ class CreateLocationsTable extends Migration
             $table->string('name', 40);
             $table->timestamps();
         });
+
+        DB::table('locations')->insert([
+            ['name' => 'Koelkast'],
+            ['name' => 'Vriezer'],
+            ['name' => 'Voorraadkast'],
+        ]);
     }
 
     /**
