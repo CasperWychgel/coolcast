@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Location;
 use App\Product;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class ProductController extends Controller
 {
@@ -34,9 +35,13 @@ class ProductController extends Controller
 
     public function store()
     {
+        $nowdate = Carbon::now();
+
         $invproduct = new Inventoryproduct();
 
         $invproduct->name = request('name');
+
+        $invproduct->expiration_date = $nowdate->addDays(5);
 
         $invproduct->location_id = request('location');
 

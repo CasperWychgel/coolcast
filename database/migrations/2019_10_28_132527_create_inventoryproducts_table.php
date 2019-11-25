@@ -17,6 +17,7 @@ class CreateInventoryProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 40);
             $table->bigInteger('location_id');
+            $table->date('expiration_date');
 
             $table->timestamps();
         });

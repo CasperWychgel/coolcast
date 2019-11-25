@@ -14,7 +14,6 @@
                     @endforeach
                 </select>
 
-
                 <select name="location">
                     @foreach ($locations as $location)
                         <option value="{{$location->id}}">{{$location->name}}</option>
