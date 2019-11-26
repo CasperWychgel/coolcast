@@ -20,14 +20,7 @@ class ProductController extends Controller
         ]);
     }
 
-    public function notification()
-    {
-        //    $products =DB::table('products')->get();
-        return view('products.index', [
-            'invproducts' => Inventoryproduct::all()->sortBy('date',0,true)
-        ]);
-    }
-
+    
     public function create()
     {
         return view('products.create', [
@@ -53,4 +46,16 @@ class ProductController extends Controller
 
         return redirect('/');
     }
+
+    public function notification()
+    {
+        $nowdate = Carbon::now();
+        $badbydate = $nowdate->addDays(3);
+
+        //    $products =DB::table('products')->get();
+        return view('products.index', [
+            'invproducts' => Inventoryproduct::all()->max($badbydate)
+        ]);
+    }
+
 }
