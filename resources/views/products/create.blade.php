@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section('content')
-<form id="" method="POST" action="/add" >
+<form id="" method="POST" action="/products/add" >
     {{csrf_field()}}
 
     <p>What is the product called?</p>
@@ -14,13 +14,11 @@
         </datalist>
     </input>
 
-    <input name="location" list="brow" placeholder="Locatie">
-        <datalist id="brow">
+    <select name="location" placeholder="Locatie">
         @foreach ($locations as $location)
             <option value="{{$location->id}}">{{$location->name}}</option>
         @endforeach
-        </datalist>
-    </input>
+    </select>
     <div class="">
         <button class="" type="submit" name="action">Submit</button>
     </div>

@@ -12,8 +12,8 @@
 */
 
 Route::get('/','ProductController@index');
-Route::get('/add','ProductController@create')->name('add');
-Route::post('/add','ProductController@store');
+Route::get('/products/add','ProductController@create')->name('add');
+Route::post('/products/add','ProductController@store');
 
 Route::get('/locations', 'LocationController@index')->name('locations');
 Route::get('/locations/{id}', 'LocationController@show');
