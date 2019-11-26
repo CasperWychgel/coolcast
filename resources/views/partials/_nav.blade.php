@@ -12,7 +12,7 @@
                 </li>
                 @foreach($locations as $location)
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="/locations/{{ $location->id }}">{{ $location->name }}</a>
+                    <a class="nav-link text-white" href="/locations/{{ $location->id }}/show">{{ $location->name }}</a>
                 </li>
             @endforeach
 
