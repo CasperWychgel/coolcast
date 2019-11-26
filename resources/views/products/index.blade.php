@@ -1,6 +1,7 @@
 @extends ('layout')
 
 @section('content')
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
     <div class="">
         <ul class="list-group m-3">
@@ -11,5 +12,7 @@
             @endforeach
         </ul>
     </div>
+
+
 
 @endsection
