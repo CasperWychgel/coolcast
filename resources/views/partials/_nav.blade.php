@@ -7,7 +7,10 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         </form>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            @foreach($locations as $location)
+                <li class="nav-item m-auto">
+                    <a href="/locations/add"><i class="fas fa-plus nav-link"></i></a>
+                </li>
+                @foreach($locations as $location)
                 <li class="nav-item">
                     <a class="nav-link text-white" href="/locations/{{ $location->id }}">{{ $location->name }}</a>
                 </li>

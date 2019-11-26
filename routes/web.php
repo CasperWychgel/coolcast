@@ -16,6 +16,6 @@ Route::get('/add','ProductController@create');
 Route::post('/add','ProductController@store');
 
 Route::get('/locations', 'LocationController@index');
-Route::get('/locations/{id}', 'LocationController@show');
-Route::get('locations/add', 'LocationController@create');
-Route::post('locations/add', 'LocationController@store');
+Route::get('/locations/{id}/show', 'LocationController@show');
+Route::get('/locations/add', 'LocationController@create');
+Route::post('/locations/add', 'LocationController@store');

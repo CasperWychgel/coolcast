@@ -25,12 +25,12 @@ class LocationController extends Controller
         $location = new Location();
         $location->name = request('name');
         $location->save();
-        return redirect('locations');
+        return redirect('locations/'.$location->id.'/show');
     }
 
     public function show($id) {
         return view('locations.show', [
-            'products' =>Inventoryproduct::where('location_id', $id)->get()
+            'invproducts' =>Inventoryproduct::where('location_id', $id)->get()
         ]);
     }
 }

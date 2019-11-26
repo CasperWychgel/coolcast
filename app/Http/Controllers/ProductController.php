@@ -16,7 +16,7 @@ class ProductController extends Controller
     {
         //    $products =DB::table('products')->get();
         return view('products.index', [
-            'invproducts' => Inventoryproduct::all()
+            'invproducts' => Inventoryproduct::all()->sortBy('date',0,false)
         ]);
     }
 
