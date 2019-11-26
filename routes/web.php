@@ -13,6 +13,7 @@
 
 Route::get('/','ProductController@index');
 Route::get('/add','ProductController@create');
+Route::get('/notif','ProductController@notification');
 Route::post('/add','ProductController@store');
 
 Route::get('/locations', 'LocationController@index');
