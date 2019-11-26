@@ -43,7 +43,7 @@ class ProductController extends Controller
 
         $invproduct->save();
 
-        if($expiration_date > $today ) {
+        if($invproduct->expiration_date > $nowdate ) {
             return redirect('/')
                 ->with('error','Het ingevoerde product is over de datum');
         } else {
