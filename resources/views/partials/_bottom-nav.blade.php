@@ -1,11 +1,5 @@
-<div class="d-flex">
-    <div class="m-4 p-1 bg-primary rounded-circle">
-        <i class="fas fa-plus"></i>
-    </div>
-    <div class="m-4 p-1 bg-primary rounded-circle">
-        <i class="fas fa-times"></i>
-    </div>
-    <div class="m-4 p-1 bg-primary rounded-circle">
-        <i class="far fa-trash-alt"></i>
-    </div>
+<div class="btn-group fixed-bottom text-white" role="group">
+    <a class="btn btn-secondary">Left</a>
+    <a class="btn btn-secondary">Add a product</a>
+    <a class="btn btn-secondary">Right</a>
 </div>

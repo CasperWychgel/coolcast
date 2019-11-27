@@ -37,18 +37,28 @@ class ProductController extends Controller
 
         $invproduct->name = request('name');
 
-        $invproduct->expiration_date = $nowdate->addDays(5);
+        $invproduct->expiration_date = $nowdate->addDays(14);
 
         $invproduct->location_id = request('location');
 
         $invproduct->save();
 
-        if($invproduct->expiration_date > $nowdate ) {
+        if($invproduct->expiration_date < $nowdate ) {
             return redirect('/')
                 ->with('error','Het ingevoerde product is over de datum');
         } else {
             return redirect('/')
                 ->with('succes','Uw product is toegevoegd aan de locatie');
         }
+    }
+
+    public function notify()
+    {
+        $checkDate = Carbon::now()->addDays(4);
+
+        return view('products.index', [
+            'invproducts' => Inventoryproduct::all()->where('expiration_date', '<', $checkDate)
+        ]);
+
     }
 }

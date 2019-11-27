@@ -12,6 +12,7 @@
 */
 
 Route::get('/','ProductController@index');
+Route::get('/notify','ProductController@notify');
 Route::get('/products/add','ProductController@create')->name('add');
 Route::post('/products/add','ProductController@store');
 

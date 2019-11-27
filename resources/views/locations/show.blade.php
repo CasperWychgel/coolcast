@@ -1,25 +1,35 @@
 @extends ('layout')
 
 @section('content')
-    <div class="">
-        <ul class="list-group m-3">
-            @foreach ($invproducts as $invproduct)
-                <li class="list-group-item mb-3 bg-primary rounded">
-                    <a class="">{{$invproduct->name}}</a>
-                </li>
-            @endforeach
-        </ul>
+    <div class="jumbotron jumbotron-fluid bg-transparent mb-0">
+        <div class="container">
+            <h1 class="display-4 text-center">Your products</h1>
+            <p class="lead"></p>
+        </div>
     </div>
+    <table class="table table-hover table-borderless mt-0">
+        <thead>
+        <tr>
+            <th scope="col">Products</th>
+            <th scope="col">Expiration date</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach ($invproducts as $invproduct)
+            <tr>
+                <td>{{$invproduct->name}}</td>
+                <td>{{$invproduct->expiration_date}}</td>
+            </tr>
+        @endforeach
+        </tbody>
 
     @if(empty($invproduct))
-        <div class="container">
-            <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                    <span class="card-title">Oeps, er is hier helaas niks te vinden.</span>
-                    <p>Voeg een product toe aan deze locatie met de onderstaande knop.</p>
-                </div>
-                <div class="card-action">
-                    <a href="{{route('add')}}" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Klik hier</a>
+        <div class="container-fluid justify-content-center">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Whoeps</h5>
+                    <p class="card-text">Er is hier helaas niks te vinden.</p>
+                    <a href="{{route('add')}}" class="btn btn-primary">Voeg producten toe</a>
                 </div>
             </div>
         </div>
