@@ -35,7 +35,7 @@ class ProductController extends Controller
 
         $invproduct = new Inventoryproduct();
 
-        $invproduct->name = request('name');
+        $invproduct->name = request(['name']);
 
         $invproduct->expiration_date = $nowdate->addDays(5);
 
