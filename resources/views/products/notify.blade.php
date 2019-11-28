@@ -6,9 +6,9 @@
 @section('content')
 
     <div class="container-fluid text-center">
-        <h5>
+        <p>
             deze producten zijn bijna over de datum:
-        </h5>
+        </p>
     </div>
     
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
