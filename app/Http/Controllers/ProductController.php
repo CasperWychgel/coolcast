@@ -43,11 +43,11 @@ class ProductController extends Controller
 
         $invproduct->save();
 
-        if($invproduct->expiration_date < $nowdate ) {
-            return redirect('/')
+        if($invproduct->expiration_date < $nowdate) {
+            return redirect('/home')
                 ->with('error','Het ingevoerde product is over de datum');
         } else {
-            return redirect('/')
+            return redirect('/home')
                 ->with('succes','Uw product is toegevoegd aan de locatie');
         }
     }
@@ -56,9 +56,8 @@ class ProductController extends Controller
     {
         $checkDate = Carbon::now()->addDays(4);
 
-        return view('products.index', [
-            'invproducts' => Inventoryproduct::all()->where('expiration_date', '<', $checkDate)
+        return view('products.notify', [
+            'invproducts' => Inventoryproduct::all()->where('expiration_date', '<=', $checkDate)
         ]);
-
     }
 }
