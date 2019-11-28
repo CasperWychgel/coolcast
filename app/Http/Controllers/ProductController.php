@@ -30,7 +30,7 @@ class ProductController extends Controller
     }
 
 
-    public function store()
+    public function store(Request $request)
     {
         $nowdate = Carbon::now();
 
@@ -44,7 +44,13 @@ class ProductController extends Controller
 
         $invproduct->save();
 
-        return redirect('/');
+        if($expiration_date > $today ) {
+            return redirect('/')
+                ->with('error','Het ingevoerde product is over de datum');
+        } else {
+            return redirect('/')
+                ->with('succes','Uw product is toegevoegd aan de locatie');
+        }
     }
 
     public function notification()
