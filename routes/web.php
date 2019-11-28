@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/','ProductController@index');
+Route::get('/home','ProductController@index');
 Route::get('/products/add','ProductController@create')->name('add');
 Route::post('/products/add','ProductController@store');
-Route::get('/notif','ProductController@notification');
+Route::get('/','ProductController@notification');
 
 Route::get('/locations', 'LocationController@index')->name('locations');
 Route::get('/locations/{id}/show', 'LocationController@show');

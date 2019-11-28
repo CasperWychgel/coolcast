@@ -44,24 +44,17 @@ class ProductController extends Controller
 
         $invproduct->save();
 
-        if($expiration_date > $today ) {
-            return redirect('/')
-                ->with('error','Het ingevoerde product is over de datum');
-        } else {
-            return redirect('/')
-                ->with('succes','Uw product is toegevoegd aan de locatie');
-        }
     }
 
     public function notification()
     {
-        $nowdate = Carbon::now();
-        $badbydate = $nowdate->addDays(3);
+       
+        $badbydate = Carbon::now()->addDays(3);
 
-        //    $products =DB::table('products')->get();
-        return view('products.index', [
-            'invproducts' => Inventoryproduct::all()->max($badbydate)
+        return view('products.notify', [
+            'invproducts' => Inventoryproduct::all()->where('expiration_date', '<=', $badbydate)->sortBy('date',0,false)
         ]);
+        
     }
 
 }
