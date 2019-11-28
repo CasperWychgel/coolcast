@@ -31,7 +31,7 @@
                     @endforeach
                 </select>
             </div>
-            <button type="submit" name="action" class="text-white btn btn-block btn-light bg-transparent shadow-lg">Add to your CoolCast</button>
+            <button type="submit" name="action" class="text-white btn btn-block btn-light bg-transparent shadow-lg">Toevoegen aan je CoolCast</button>
         </form>
     </div>
 
