@@ -34,21 +34,11 @@ class ProductController extends Controller
         $nowdate = Carbon::now();
 
         $invproduct = new Inventoryproduct();
-
-        $invproduct->name = request(['name']);
-
+        $invproduct->name = request('name');
         $invproduct->expiration_date = $nowdate->addDays(5);
-
         $invproduct->location_id = request('location');
-
         $invproduct->save();
 
-        if($expiration_date > $today ) {
-            return redirect('/')
-                ->with('error','Het ingevoerde product is over de datum');
-        } else {
-            return redirect('/')
-                ->with('succes','Uw product is toegevoegd aan de locatie');
-        }
+        return redirect('locations/'.$invproduct->location_id.'/show');
     }
 }
