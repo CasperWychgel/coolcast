@@ -7,20 +7,27 @@
             <p class="lead text-center">Hieronder zie je een overzicht van alle producten in je huis.</p>
         </div>
     </div>
-    <div class="card-body">
-        @foreach ($invproducts as $invproduct)
-            <div class="card mb-2">
-                <div class="card-body bg-card">
-                    <h5 class="card-title">{{$invproduct->name}}</h5>
-                    <div class="editshow">
-                        <a class="btn btn-primary" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a>
+    <form>
+        <div class="card-body">
+            @foreach ($invproducts as $invproduct)
+                <div class="card mb-2">
+                    <div class="card-body bg-card">
+                        <h5 class="card-title">{{$invproduct->name}}</h5>
+                        <p class="card-text">{{$invproduct->expiration_date}}</p>
+                        <div class="editshow">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="{{$invproduct->id}}">
+                                <label class="custom-control-label" for="{{$invproduct->id}}">Selecteer dit als je het product wilt verwijderen</label>
+                            </div>
+                            <br>
+                            <a class="text-white btn btn-light bg-transparent" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a>
+                        </div>
                     </div>
-
-                    <p class="card-text">{{$invproduct->expiration_date}}</p>
                 </div>
-            </div>
-        @endforeach
-    </div>
+            @endforeach
+        </div>
+    </form>
+
     <div class="jumbotron jumbotron-fluid bg-transparent mb-5">
         <div class="container mb-5">
             <h1 class="display-4 text-center">Houd je eigen bijdrage bij</h1>
