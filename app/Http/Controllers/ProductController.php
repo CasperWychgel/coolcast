@@ -32,8 +32,8 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $nowdate = Carbon::now();
-        
-        foreach ($request->input('name') as $name){
+
+        foreach ($request->input('name') as $name) {
             $invproduct = new Inventoryproduct();
             $invproduct->name = $name;
             $invproduct->expiration_date = $nowdate->addDays(5);
