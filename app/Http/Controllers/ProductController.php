@@ -79,7 +79,7 @@ class ProductController extends Controller
 
     public function notify()
     {
-        $checkDate = Carbon::now()->addDays(4);
+        $checkdate = Carbon::now()->addDays(4);
 
         return view('products.notify', [
             'invproducts' => Inventoryproduct::all()->where('expiration_date', '<=', $checkdate)->sortBy('date',0,false)
