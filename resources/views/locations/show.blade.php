@@ -10,26 +10,16 @@
                 @endforeach
             </div>
         </div>
-        <div class="container">
-            <table class="table table-hover table-borderless mt-0">
-                <thead>
-                <tr>
-                    <th scope="col">Producten</th>
-                    <th scope="col">Houdbaarheidsdatum</th>
-                    <th scope="col">Bijwerken</th>
+        <div class="card-body">
+            @foreach ($invproducts as $invproduct)
+                <div class="card mb-2">
+                    <div class="card-body bg-card">
+                        <h5 class="card-title">{{$invproduct->name}}  <a class="btn btn-primary" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a></h5>
 
-                </tr>
-                </thead>
-                <tbody>
-                @foreach ($invproducts as $invproduct)
-                    <tr>
-                        <td>{{$invproduct->name}}</td>
-                        <td>{{$invproduct->expiration_date}}</td>
-                        <td><a class="btn btn-primary" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a></td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
+                        <p class="card-text">{{$invproduct->expiration_date}}</p>
+                    </div>
+                </div>
+            @endforeach
         </div>
         
 @include('partials._empty-error')
