@@ -1,32 +1,28 @@
 @extends ('layout')
+@if ($invproducts->isempty())
+    <script>window.location = "/home";</script>
+@endif
 
 @section('content')
-    <div class="jumbotron jumbotron-fluid bg-transparent mb-0">
-        <div class="container">
-            <h1 class="display-4 text-center">Producten in de gevarenzone.</h1>
-            <p class="lead text-center">Deze producten gaan binnenkort over de houdbaarheidsdatum, Je hebt nog een aantal dagen om deze producten te gebruiken.</p>
-            <a href="{{route('home')}}" class="text-white btn btn-block btn-light bg-transparent shadow-lg">Go to your CoolCast</a>
-        </div>
+
+    <div class="container-fluid text-center">
+        <p>
+            deze producten zijn bijna over de datum:
+        </p>
     </div>
-    <div class="container">
-        <table class="table table-hover table-borderless mt-0">
-            <thead>
-            <tr>
-                <th scope="col">Producten</th>
-                <th scope="col">Houdbaarheidsdatum</th>
-            </tr>
-            </thead>
-            <tbody>
+    
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    
+    <div class="">
+        <ul class="list-group m-3">
             @foreach ($invproducts as $invproduct)
-                <tr>
-                    <td>{{$invproduct->name}}</td>
-                    <td>{{$invproduct->expiration_date}}</td>
-                </tr>
+            <li class="list-group-item mb-3 bg-primary rounded">
+                <a class="">{{$invproduct->name}}</a>
+            </li>
             @endforeach
-            </tbody>
-        </table>
+        </ul>
     </div>
+
+
 
 @endsection
-
-

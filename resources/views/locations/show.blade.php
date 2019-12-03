@@ -2,20 +2,6 @@
 
 @section('content')
 
-
-    @if ($invproducts->isEmpty())
-        <div class="jumbotron jumbotron-fluid bg-transparent mb-0">
-            <div class="container">
-                <h1 class="display-4 text-center">Dat is pech, producten weg!</h1>
-                @foreach ($locations as $location)
-                <p class="lead text-center">Er is hier helaas nog niks te vinden in de {{$location->name}}</p>
-                @endforeach
-                <div class="text-center">
-                    <a href="{{route('add')}}" class="btn btn-light text-white bg-transparent shadow-lg">Voeg producten toe</a>
-                </div>
-            </div>
-        </div>
-    @else
         <div class="jumbotron jumbotron-fluid bg-transparent mb-0">
             <div class="container">
                 @foreach ($locations as $location)
@@ -45,6 +31,7 @@
                 </tbody>
             </table>
         </div>
-    @endif
+        
+@include('partials._empty-error')
 
 @endsection

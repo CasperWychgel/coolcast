@@ -20,6 +20,7 @@ class ProductController extends Controller
         ]);
     }
 
+    
     public function create()
     {
         return view('products.create', [
@@ -33,24 +34,17 @@ class ProductController extends Controller
     {
         $nowdate = Carbon::now();
 
-        $invproduct = new Inventoryproduct();
-
-        $invproduct->name = request('name');
-
-        $invproduct->expiration_date = $nowdate->addDays(14);
-
-        $invproduct->location_id = request('location');
-
-        $invproduct->save();
-
-        if($invproduct->expiration_date < $nowdate) {
-            return redirect('/home')
-                ->with('error','Het ingevoerde product is over de datum');
-        } else {
-            return redirect('/home')
-                ->with('succes','Uw product is toegevoegd aan de locatie');
+        foreach ($request->input('name') as $name) {
+            $invproduct = new Inventoryproduct();
+            $invproduct->name = $name;
+            $invproduct->expiration_date = $nowdate->addDays(5);
+            $invproduct->location_id = request('location');
+            $invproduct->save();
         }
+
+        return redirect('locations/'.$invproduct->location_id.'/show');
     }
+
 
     public function edit($id)
     {
@@ -88,7 +82,9 @@ class ProductController extends Controller
         $checkDate = Carbon::now()->addDays(4);
 
         return view('products.notify', [
-            'invproducts' => Inventoryproduct::all()->where('expiration_date', '<=', $checkDate)
+            'invproducts' => Inventoryproduct::all()->where('expiration_date', '<=', $checkdate)->sortBy('date',0,false)
         ]);
+        
     }
+
 }
