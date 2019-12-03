@@ -14,7 +14,10 @@
             @foreach ($invproducts as $invproduct)
                 <div class="card mb-2">
                     <div class="card-body bg-card">
-                        <h5 class="card-title">{{$invproduct->name}}  <a class="btn btn-primary" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a></h5>
+                        <h5 class="card-title">{{$invproduct->name}}</h5>
+                        <div class="editshow">
+                            <a class="btn btn-primary" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a>
+                        </div>
 
                         <p class="card-text">{{$invproduct->expiration_date}}</p>
                     </div>
