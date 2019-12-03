@@ -6,7 +6,7 @@
 
     <p>What is the product called?</p>
 
-    <select class="myselect" name="name" placeholder="Name">
+    <select class="myselect" name="name[]" placeholder="Name" multiple="multiple">
         @foreach ($products as $product)
             <option value="{{$product->name}}">{{$product->name}}</option>
         @endforeach
