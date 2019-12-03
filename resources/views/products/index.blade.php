@@ -7,25 +7,16 @@
             <p class="lead text-center">Hieronder zie je een overzicht van alle producten in je huis.</p>
         </div>
     </div>
-    {{-- <div class="container">
-        <table class="table table-hover table-borderless mt-0">
-            <thead>
-            <tr>
-                <th scope="col">Producten</th>
-                <th scope="col">Houdbaarheidsdatum</th>
-                <th scope="col">Bijwerken</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach ($invproducts as $invproduct)
-                <tr>
-                    <td>{{$invproduct->name}}</td>
-                    <td>{{$invproduct->expiration_date}}</td>
-                    <td><a class="btn btn-primary" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a></td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
+    <div class="card-body">
+        @foreach ($invproducts as $invproduct)
+            <div class="card mb-2">
+                <div class="card-body bg-card">
+                    <h5 class="card-title">{{$invproduct->name}}  <a class="btn btn-primary" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a></h5>
+
+                    <p class="card-text">{{$invproduct->expiration_date}}</p>
+                </div>
+            </div>
+        @endforeach
     </div>
     <div class="jumbotron jumbotron-fluid bg-transparent">
         <div class="container">
@@ -35,17 +26,5 @@
                 <div class="progress-bar bg-info" role="progressbar" style="width: 68%" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">0,856 Ton CO2</div>
             </div>
         </div>
-    </div> --}}
-
-            <div class="card-body">
-                @foreach ($invproducts as $invproduct)
-                <div class="card mb-2" style="">
-                    <div class="card-body bg-card">
-                    <h5 class="card-title">{{$invproduct->name}}</h5>
-                      <p class="card-text">27/11/2019</p>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-
+    </div>
 @endsection

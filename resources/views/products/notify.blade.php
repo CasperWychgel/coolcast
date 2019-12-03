@@ -5,22 +5,22 @@
 
 @section('content')
 
-    <div class="container-fluid text-center">
-        <p>
-            deze producten zijn bijna over de datum:
-        </p>
+    <div class="jumbotron jumbotron-fluid bg-transparent mb-0">
+        <div class="container">
+            <h1 class="display-4 text-center">Pas op! deze producten gaan bijna over de datum</h1>
+        </div>
     </div>
-    
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    
-    <div class="">
-        <ul class="list-group m-3">
-            @foreach ($invproducts as $invproduct)
-            <li class="list-group-item mb-3 bg-primary rounded">
-                <a class="">{{$invproduct->name}}</a>
-            </li>
-            @endforeach
-        </ul>
+
+    <div class="card-body">
+        @foreach ($invproducts as $invproduct)
+            <div class="card mb-2" style="">
+                <div class="card-body bg-card">
+                    <h5 class="card-title">{{$invproduct->name}}  <a class="btn btn-primary" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a></h5>
+
+                    <p class="card-text">{{$invproduct->expiration_date}}</p>
+                </div>
+            </div>
+        @endforeach
     </div>
 
 
