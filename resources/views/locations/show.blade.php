@@ -39,7 +39,7 @@
                     <tr>
                         <td>{{$invproduct->name}}</td>
                         <td>{{$invproduct->expiration_date}}</td>
-                        <td><a class="btn btn-primary" href="/products/{{$invproduct->id}}" role="button">Edit</a></td>
+                        <td><a class="btn btn-primary" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a></td>
                     </tr>
                 @endforeach
                 </tbody>
