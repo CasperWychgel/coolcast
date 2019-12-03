@@ -126,10 +126,10 @@ module.exports = __webpack_require__(/*! C:\xampp\htdocs\coolcast\resources\sass
 function showedit() {
     let x = document.getElementsByClassName("editshow");
     for (let i = 0; i < x.length; i++) {
-        if (x[i].style.display === "none") {
-            x[i].style.display = "block";
-        } else {
+        if (x[i].style.display === "block") {
             x[i].style.display = "none";
+        } else {
+            x[i].style.display = "block";
         }
     }
 
