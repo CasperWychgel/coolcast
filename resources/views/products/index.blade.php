@@ -9,16 +9,20 @@
     </div>
     <div class="card-body">
         @foreach ($invproducts as $invproduct)
-            <div class="card mb-2" style="">
+            <div class="card mb-2">
                 <div class="card-body bg-card">
                     <h5 class="card-title">{{$invproduct->name}}</h5>
+                    <div class="editshow">
+                        <a class="btn btn-primary" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a>
+                    </div>
+
                     <p class="card-text">{{$invproduct->expiration_date}}</p>
                 </div>
             </div>
         @endforeach
     </div>
-    <div class="jumbotron jumbotron-fluid bg-transparent">
-        <div class="container">
+    <div class="jumbotron jumbotron-fluid bg-transparent mb-5">
+        <div class="container mb-5">
             <h1 class="display-4 text-center">Houd je eigen bijdrage bij</h1>
             <p class="lead text-center">Hieronder zie je hoeveel CO2 uitstoot dit jaar is bespaard</p>
             <div class="progress">

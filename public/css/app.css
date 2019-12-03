@@ -10690,6 +10690,9 @@ a.text-dark:focus {
 }
 
 .bg-card {
-  background-color: #2e858f !important;
+  background-color: #459ca5 !important;
+}
+.editshow{
+  display: none;
 }
 
