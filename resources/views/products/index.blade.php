@@ -32,7 +32,7 @@
             <h1 class="display-4 text-center">Houd je eigen bijdrage bij</h1>
             <p class="lead text-center">Hieronder zie je hoeveel CO2 uitstoot dit jaar is bespaard</p>
             <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 68%" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">0,856 Ton</div>
+                <div class="progress-bar bg-info" role="progressbar" style="width: 68%" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">0,856 Ton CO2</div>
             </div>
         </div>
     </div>
