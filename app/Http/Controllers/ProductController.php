@@ -37,7 +37,7 @@ class ProductController extends Controller
         foreach ($request->input('name') as $name) {
             $invproduct = new Inventoryproduct();
             $invproduct->name = $name;
-            $invproduct->expiration_date = $nowdate->addDays(5);
+            $invproduct->expiration_date = $nowdate->addDays(14);
             $invproduct->location_id = request('location');
             $invproduct->save();
         }
