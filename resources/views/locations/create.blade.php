@@ -1,6 +1,9 @@
 @extends ('layout')
 
 @section('content')
+
+    @include('partials._error')
+
     <form id="" method="POST" action="/locations/add" >
         {{csrf_field()}}
 

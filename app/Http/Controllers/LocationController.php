@@ -21,10 +21,13 @@ class LocationController extends Controller
         return view('locations.create');
     }
 
-    public function store() {
-        $location = new Location();
-        $location->name = request('name');
-        $location->save();
+    public function store(Request $request) {
+        $attributes = $request->validate([
+            'name' => ['required', 'string', 'unique:locations,name', 'max:255']
+        ]);
+
+        $location = Location::create($attributes);
+
         return redirect('locations/'.$location->id.'/show');
     }
 

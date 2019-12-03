@@ -34,16 +34,15 @@ class ProductController extends Controller
     {
         $nowdate = Carbon::now();
 
-        $invproduct = new Inventoryproduct();
+        foreach ($request->input('name') as $name) {
+            $invproduct = new Inventoryproduct();
+            $invproduct->name = $name;
+            $invproduct->expiration_date = $nowdate->addDays(5);
+            $invproduct->location_id = request('location');
+            $invproduct->save();
+        }
 
-        $invproduct->name = request('name');
-
-        $invproduct->expiration_date = $nowdate->addDays(5);
-
-        $invproduct->location_id = request('location');
-
-        $invproduct->save();
-
+        return redirect('locations/'.$invproduct->location_id.'/show');
     }
 
     public function notification()
