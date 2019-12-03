@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Location;
 use App\Product;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class ProductController extends Controller
 {
@@ -19,6 +20,7 @@ class ProductController extends Controller
         ]);
     }
 
+    
     public function create()
     {
         return view('products.create', [
@@ -27,21 +29,62 @@ class ProductController extends Controller
         ]);
     }
 
-/*    public function create()
-    {
-        return view('products.create');
-    }*/
 
-    public function store()
+    public function store(Request $request)
     {
-        $invproduct = new Inventoryproduct();
+        $nowdate = Carbon::now();
+
+        foreach ($request->input('name') as $name) {
+            $invproduct = new Inventoryproduct();
+            $invproduct->name = $name;
+            $invproduct->expiration_date = $nowdate->addDays(5);
+            $invproduct->location_id = request('location');
+            $invproduct->save();
+        }
+
+        return redirect('locations/'.$invproduct->location_id.'/show');
+    }
+
+
+    public function edit($id)
+    {
+        return view('products.edit', [
+            'invproducts' =>Inventoryproduct::where('id', $id)->get(),
+            'locations' => Location::all(),
+        ]);
+    }
+
+    public function update(Request $request,$id)
+    {
+        $invproduct = Inventoryproduct::find($id);
 
         $invproduct->name = request('name');
+
+        $invproduct->expiration_date = request('expiration_date');
 
         $invproduct->location_id = request('location');
 
         $invproduct->save();
 
-        return redirect('/');
+        return redirect('/home')
+            ->with('succes','Uw product is bijgewerkt');
     }
+
+    public function destroy($id)
+    {
+
+    }
+
+
+
+    public function notify()
+    {
+        $checkdate = Carbon::now()->addDays(4);
+
+        return view('products.notify', [
+            'invproducts' => Inventoryproduct::all()->where('expiration_date', '<=', $checkdate)->sortBy('date',0,false)
+        ]);
+        
+    }
+
 }

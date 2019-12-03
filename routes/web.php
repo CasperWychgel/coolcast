@@ -11,11 +11,14 @@
 |
 */
 
-Route::get('/','ProductController@index');
-Route::get('/add','ProductController@create');
-Route::post('/add','ProductController@store');
+Route::get('/home','ProductController@index')->name('home');
+Route::get('/','ProductController@notify')->name('notify');
+Route::get('/products/add','ProductController@create')->name('add');
+Route::get('/products/{id}/edit','ProductController@edit');
+Route::post('/products/add','ProductController@store');
+Route::post('/products/{id}/edit','ProductController@update');
 
-Route::get('/locations', 'LocationController@index');
-Route::get('/locations/{id}', 'LocationController@show');
+Route::get('/locations', 'LocationController@index')->name('locations');
+Route::get('/locations/{id}/show', 'LocationController@show');
 Route::get('locations/add', 'LocationController@create');
 Route::post('locations/add', 'LocationController@store');

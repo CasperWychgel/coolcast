@@ -1,38 +1,34 @@
 @extends ('layout')
 
 @section('content')
+<form id="" method="POST" action="/products/add" >
+    {{csrf_field()}}
 
+    <p>What is the product called?</p>
 
+    <select class="myselect" name="name[]" placeholder="Name" multiple="multiple">
+        @foreach ($products as $product)
+            <option value="{{$product->name}}">{{$product->name}}</option>
+        @endforeach
+    </select>
 
-            <form id="" method="POST" action="/add" >
-                {{csrf_field()}}
+    <select class="myselect" name="location" placeholder="Locatie">
+        @foreach ($locations as $location)
+            <option value="{{$location->id}}">{{$location->name}}</option>
+        @endforeach
+    </select>
 
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Product</label>
-                    </div>
-                    <select name="name" class="custom-select" id="inputGroupSelect01">
-                        @foreach ($products as $product)
-                            <option value="{{$product->name}}">{{$product->name}}</option>
-                        @endforeach
+    <div>
+        <button class="" type="submit" name="action">Submit</button>
+    </div>
+</form>
 
-                    </select>
-                </div>
+<script type="text/javascript">
+    $(".myselect").select2();
+</script>
 
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect02">Location</label>
-                    </div>
-                    <select name="location" class="custom-select" id="inputGroupSelect02">
-                        @foreach ($locations as $location)
-                            <option value="{{$location->id}}">{{$location->name}}</option>
-                        @endforeach
-                    </select>
-                </div>
-
-                <input class="btn btn-primary" type="submit" value="Submit">
-
-            </form>
-
+<script type="text/javascript">
+    $(".myselect2").select2();
+</script>
 
 @endsection

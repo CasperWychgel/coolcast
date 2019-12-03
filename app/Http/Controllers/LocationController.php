@@ -21,16 +21,20 @@ class LocationController extends Controller
         return view('locations.create');
     }
 
-    public function store() {
-        $location = new Location();
-        $location->name = request('name');
-        $location->save();
-        return redirect('locations');
+    public function store(Request $request) {
+        $attributes = $request->validate([
+            'name' => ['required', 'string', 'unique:locations,name', 'max:255']
+        ]);
+
+        $location = Location::create($attributes);
+
+        return redirect('locations/'.$location->id.'/show');
     }
 
     public function show($id) {
         return view('locations.show', [
             'invproducts' =>Inventoryproduct::where('location_id', $id)->get(),
+            'locations' =>Location::where('id', $id)->get()
         ]);
     }
 }
