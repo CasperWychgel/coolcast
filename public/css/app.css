@@ -10649,3 +10649,47 @@ a.text-dark:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.btn-circle {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  padding: 6px 0px;
+  border-radius: 50%;
+  border: 0px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.btn-circle-l {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  width: 70px;
+  height: 70px;
+  padding: 6px 0px;
+  border: 0px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 12px;
+}
+
+.bg-darkblue {
+  background-color: #1a2b61 !important;
+}
+
+.bg-blue {
+  background-color: #243e91 !important;
+}
+
+.bg-background {
+  background-color: #e6e8eb !important;
+}
+
+.bg-card {
+  background-color: #2e858f !important;
+}
+
