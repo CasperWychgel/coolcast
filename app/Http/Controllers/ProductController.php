@@ -52,6 +52,37 @@ class ProductController extends Controller
         }
     }
 
+    public function edit($id)
+    {
+        return view('products.edit', [
+            'invproducts' =>Inventoryproduct::where('id', $id)->get(),
+            'locations' => Location::all(),
+        ]);
+    }
+
+    public function update(Request $request,$id)
+    {
+        $invproduct = Inventoryproduct::find($id);
+
+        $invproduct->name = request('name');
+
+        $invproduct->expiration_date = request('expiration_date');
+
+        $invproduct->location_id = request('location');
+
+        $invproduct->save();
+
+        return redirect('/home')
+            ->with('succes','Uw product is bijgewerkt');
+    }
+
+    public function destroy($id)
+    {
+
+    }
+
+
+
     public function notify()
     {
         $checkDate = Carbon::now()->addDays(4);

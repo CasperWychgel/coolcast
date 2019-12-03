@@ -13,6 +13,7 @@
             <tr>
                 <th scope="col">Producten</th>
                 <th scope="col">Houdbaarheidsdatum</th>
+                <th scope="col">Bijwerken</th>
             </tr>
             </thead>
             <tbody>
@@ -20,6 +21,7 @@
                 <tr>
                     <td>{{$invproduct->name}}</td>
                     <td>{{$invproduct->expiration_date}}</td>
+                    <td><a class="btn btn-primary" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a></td>
                 </tr>
             @endforeach
             </tbody>

@@ -14,7 +14,9 @@
 Route::get('/home','ProductController@index')->name('home');
 Route::get('/','ProductController@notify')->name('notify');
 Route::get('/products/add','ProductController@create')->name('add');
+Route::get('/products/{id}/edit','ProductController@edit');
 Route::post('/products/add','ProductController@store');
+Route::post('/products/{id}/edit','ProductController@update');
 
 Route::get('/locations', 'LocationController@index')->name('locations');
 Route::get('/locations/{id}/show', 'LocationController@show');
