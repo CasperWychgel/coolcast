@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="{{route('notify')}}">Producten in de gevarenzone</a>
+                <a class="nav-link" href="{{route('notify')}}">Notificaties</a>
             </li>
             @foreach($locations as $location)
                 <li class="nav-item">

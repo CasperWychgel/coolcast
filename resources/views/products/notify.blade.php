@@ -7,7 +7,7 @@
 
     <div class="jumbotron jumbotron-fluid bg-transparent mb-0">
         <div class="container">
-            <h1 class="display-4 text-center">Pas op! deze producten gaan bijna over de datum</h1>
+            <h1 class="display-4 text-center">Pas op! deze {{count($invproducts)}} producten gaan bijna over de datum</h1>
         </div>
     </div>
 

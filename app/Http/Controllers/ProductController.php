@@ -20,7 +20,7 @@ class ProductController extends Controller
         ]);
     }
 
-    
+
     public function create()
     {
         return view('products.create', [
@@ -89,7 +89,7 @@ class ProductController extends Controller
         return view('products.notify', [
             'invproducts' => Inventoryproduct::all()->where('expiration_date', '<=', $checkdate)->sortBy('date',0,false)
         ]);
-        
+
     }
 
 }
