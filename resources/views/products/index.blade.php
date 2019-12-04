@@ -19,13 +19,13 @@
         <div class="card-body">
             @foreach ($invproducts as $invproduct)
                 <div class="card mb-2">
-                    <div class="card-body bg-info">
+                    <div class="card-body bg-card">
                         <h5 class="card-title">{{$invproduct->name}}</h5>
                         <p class="card-text">{{$invproduct->expiration_date}}</p>
                         <div class="editshow">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input selectbox" name="product[]" value="{{$invproduct->id}}" id="{{$invproduct->id}}">
-                                <label class="custom-control-label" for="{{$invproduct->id}}">Selecteer dit als je het product wilt verwijderen</label>
+                                <label class="custom-control-label" for="{{$invproduct->id}}">Product verwijderen?</label>
                             </div>
                             <a class="text-white btn btn-light bg-transparent" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a>
                         </div>
