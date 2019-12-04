@@ -6,7 +6,7 @@
             <h1 class="display-4 text-center">Al je producten op één plek</h1>
             <p class="lead text-center">Hieronder zie je een overzicht van alle producten in je huis.</p>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid editshow">
             <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input selectall" name="selectall" id="selectall" >
                 <label class="custom-control-label" for="selectall">Selecteer alle producten</label>
