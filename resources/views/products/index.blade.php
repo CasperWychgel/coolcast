@@ -6,20 +6,27 @@
             <h1 class="display-4 text-center">Al je producten op één plek</h1>
             <p class="lead text-center">Hieronder zie je een overzicht van alle producten in je huis.</p>
         </div>
+        <div class="container-fluid">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input selectall" name="selectall" id="selectall" >
+                <label class="custom-control-label" for="selectall">Selecteer alle producten</label>
+            </div>
+        </div>
     </div>
-    <form>
+    <form method="post" id="deleteform">
+        {{ csrf_field() }}
+        <input type="hidden" name="_method" value="delete">
         <div class="card-body">
             @foreach ($invproducts as $invproduct)
                 <div class="card mb-2">
-                    <div class="card-body bg-card">
+                    <div class="card-body bg-info">
                         <h5 class="card-title">{{$invproduct->name}}</h5>
                         <p class="card-text">{{$invproduct->expiration_date}}</p>
                         <div class="editshow">
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="{{$invproduct->id}}">
+                                <input type="checkbox" class="custom-control-input selectbox" name="product[]" value="{{$invproduct->id}}" id="{{$invproduct->id}}">
                                 <label class="custom-control-label" for="{{$invproduct->id}}">Selecteer dit als je het product wilt verwijderen</label>
                             </div>
-                            <br>
                             <a class="text-white btn btn-light bg-transparent" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a>
                         </div>
                     </div>
@@ -37,4 +44,9 @@
             </div>
         </div>
     </div>
+    <script>
+        $('.selectall').click(function () {
+            $('.selectbox').prop('checked',$(this).prop('checked'))
+        })
+    </script>
 @endsection

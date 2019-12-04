@@ -75,6 +75,11 @@ class ProductController extends Controller
 
     }
 
+    public function deleteall(Request $request)
+    {
+        Inventoryproduct::whereIn('id', $request->input('product'))->delete();
+        return redirect('/');
+    }
 
 
     public function notify()
