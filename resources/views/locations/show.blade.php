@@ -9,28 +9,39 @@
                 <p class="lead"></p>
                 @endforeach
             </div>
+            <div class="container-fluid editshow">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input selectall" name="selectall" id="selectall" >
+                    <label class="custom-control-label" for="selectall">Selecteer alle producten</label>
+                </div>
+            </div>
         </div>
-        <div class="container">
-            <table class="table table-hover table-borderless mt-0">
-                <thead>
-                <tr>
-                    <th scope="col">Producten</th>
-                    <th scope="col">Houdbaarheidsdatum</th>
-                    <th scope="col">Bijwerken</th>
-
-                </tr>
-                </thead>
-                <tbody>
+        <form method="post" id="deleteform">
+            {{ csrf_field() }}
+            <input type="hidden" name="_method" value="delete">
+            <div class="card-body">
                 @foreach ($invproducts as $invproduct)
-                    <tr>
-                        <td>{{$invproduct->name}}</td>
-                        <td>{{$invproduct->expiration_date}}</td>
-                        <td><a class="btn btn-primary" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a></td>
-                    </tr>
+                    <div class="card mb-2">
+                        <div class="card-body bg-card">
+                            <h5 class="card-title">{{$invproduct->name}}</h5>
+                            <p class="card-text">{{$invproduct->expiration_date}}</p>
+                            <div class="editshow">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input selectbox" name="product[]" value="{{$invproduct->id}}" id="{{$invproduct->id}}">
+                                    <label class="custom-control-label" for="{{$invproduct->id}}">Selecteer dit als je het product wilt verwijderen</label>
+                                </div>
+                                <a class="text-white btn btn-light bg-transparent" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a>
+                            </div>
+                        </div>
+                    </div>
                 @endforeach
-                </tbody>
-            </table>
-        </div>
+            </div>
+        </form>
+        <script>
+            $('.selectall').click(function () {
+                $('.selectbox').prop('checked',$(this).prop('checked'))
+            })
+        </script>
         
 @include('partials._empty-error')
 
