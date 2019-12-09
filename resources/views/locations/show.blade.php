@@ -26,9 +26,10 @@
                             <h5 class="card-title">{{$invproduct->name}}</h5>
                             <p class="card-text">{{$invproduct->expiration_date}}</p>
                             <div class="editshow">
+                                <i class="fas fa-trash"></i>
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input selectbox" name="product[]" value="{{$invproduct->id}}" id="{{$invproduct->id}}">
-                                    <label class="custom-control-label" for="{{$invproduct->id}}">Selecteer dit als je het product wilt verwijderen</label>
+                                    <label class="custom-control-label" for="{{$invproduct->id}}"></label>
                                 </div>
                                 <a class="text-white btn btn-light bg-transparent" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a>
                             </div>
