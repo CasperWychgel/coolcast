@@ -32,19 +32,21 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $nowdate = Carbon::now();
+        $nowdate = Carbon::now(); 
+        
 
         foreach ($request->input('name') as $name) {
+
+            $product =DB::table('products')->where("id",$id)->get();
             $invproduct = new Inventoryproduct();
-            $invproduct->name = $name;
-            $invproduct->expiration_date = $nowdate->addDays(14);
+            $invproduct->product_id =  $id;
+            $invproduct->expiration_date = $nowdate->addDays($product->expiresafter);
             $invproduct->location_id = request('location');
             $invproduct->save();
         }
 
         return redirect('locations/'.$invproduct->location_id.'/show');
     }
-
 
     public function edit($id)
     {

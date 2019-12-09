@@ -15,7 +15,7 @@ class CreateInventoryProductsTable extends Migration
     {
         Schema::create('inventoryproducts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 40);
+            $table->bigInteger('product_id');
             $table->bigInteger('location_id');
             $table->date('expiration_date');
 

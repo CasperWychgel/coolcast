@@ -21,6 +21,12 @@
                     </div>
 
                     <p class="card-text">{{$invproduct->expiration_date}}</p>
+
+                    
+                    @if ($invproducts->risico == 1) 
+                    <p class="card-text">{{$invproduct->expiration_date}}</p>
+                    @endif
+                    
                 </div>
             </div>
         @endforeach
