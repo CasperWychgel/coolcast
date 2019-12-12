@@ -14,10 +14,16 @@ class ProductController extends Controller
 {
     public function index()
     {
+        $red = Carbon::now();
+        $orange = Carbon::now()->addDays(5);
         //    $products =DB::table('products')->get();
         return view('products.index', [
-            'invproducts' => Inventoryproduct::all()->sortBy('date',0,false)
+            'invproducts' => Inventoryproduct::all()->sortBy("expiration_date"),
+            "red" => $red,
+            "orange" => $orange
         ]);
+
+
     }
 
 
@@ -84,12 +90,24 @@ class ProductController extends Controller
 
     public function notify()
     {
+        $red = Carbon::now();
+        $orange = Carbon::now()->addDays(5);
         $checkdate = Carbon::now()->addDays(4);
 
         return view('products.notify', [
-            'invproducts' => Inventoryproduct::all()->where('expiration_date', '<=', $checkdate)->sortBy('date',0,false)
+            'invproducts' => Inventoryproduct::all()->where('expiration_date', '<=', $checkdate)->sortBy('expiration_date'),
+            "red" => $red,
+            "orange" => $orange
+
         ]);
 
+    }
+
+    public function orderby()
+    {
+        return view('products.notify', [
+            'invproducts' => Inventoryproduct::all()->sortBy("expiration_date")
+        ]);
     }
 
 }

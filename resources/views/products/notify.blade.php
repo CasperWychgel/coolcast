@@ -15,6 +15,15 @@
         @foreach ($invproducts as $invproduct)
             <div class="card mb-2">
                 <div class="card-body bg-card">
+
+                        @if ($invproduct->expiration_date<$red)
+                            <div class="red"></div>
+                        @elseif (($invproduct->expiration_date<=$orange))
+                            <div class="orange"></div>
+                        @else 
+                            <div class="green"></div>
+                        @endif
+                    
                     <h5 class="card-title">{{$invproduct->name}}</h5>
                     <div class="editshow">
                         <a class="btn btn-primary" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a>

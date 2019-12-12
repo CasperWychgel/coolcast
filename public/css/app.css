@@ -10688,6 +10688,33 @@ a.text-dark:focus {
 .bg-background {
   background-color: #e6e8eb !important;
 }
+.green{
+  top: 0px;
+    display: block;
+    left: 0px;
+    height: 100%;
+    position: absolute;
+    background: green;
+    width: 15px;
+}
+.orange{
+  top: 0px;
+    display: block;
+    left: 0px;
+    height: 100%;
+    position: absolute;
+    background: orange;
+    width: 15px;
+}
+.red{
+  top: 0px;
+    display: block;
+    left: 0px;
+    height: 100%;
+    position: absolute;
+    background: red;
+    width: 15px;
+}
 
 .bg-card {
   background-color: #459ca5 !important;

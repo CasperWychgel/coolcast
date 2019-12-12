@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Location;
 use App\Product;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class LocationController extends Controller
 {
@@ -32,9 +33,14 @@ class LocationController extends Controller
     }
 
     public function show($id) {
+        $red = Carbon::now();
+        $orange = Carbon::now()->addDays(5);
+
         return view('locations.show', [
             'invproducts' =>Inventoryproduct::where('location_id', $id)->get(),
-            'locations' =>Location::where('id', $id)->get()
+            'locations' =>Location::where('id', $id)->get(),
+            "red" => $red,
+            "orange" => $orange
         ]);
     }
 }
