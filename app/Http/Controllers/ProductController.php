@@ -103,11 +103,13 @@ class ProductController extends Controller
 
     }
 
-    public function orderby()
+    public function orderby($I)
+    // $I is either name or experation_date
     {
         return view('products.notify', [
-            'invproducts' => Inventoryproduct::all()->sortBy("expiration_date")
+            'invproducts' => Inventoryproduct::all()->sortBy("$I")
         ]);
     }
+
 
 }
