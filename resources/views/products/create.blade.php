@@ -1,22 +1,13 @@
 @extends ('layout')
 
 @section('content')
-    <style>
-        body{
-            background: rgb(7,144,96);
-            background: -moz-linear-gradient(90deg, rgba(7,144,96,1) 0%, rgba(0,245,255,1) 100%);
-            background: -webkit-linear-gradient(90deg, rgba(7,144,96,1) 0%, rgba(0,245,255,1) 100%);
-            background: linear-gradient(90deg, rgba(7,144,96,1) 0%, rgba(0,245,255,1) 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#079060",endColorstr="#00f5ff",GradientType=1);
-        }
-    </style>
-    <div class="jumbotron jumbotron-fluid text-white bg-transparent mb-0">
+    <div class="jumbotron jumbotron-fluid bg-transparent mb-0">
         <div class="container">
             <h1 class="display-4 text-center">Nieuwe producten toevoegen</h1>
             <p class="lead text-center">Hier is het mogelijk om één of meerdere producten toe te voegen aan je CoolCast</p>
         </div>
     </div>
-    <div class="container text-white">
+    <div class="container">
         <form id="" method="POST" action="/products/add" >
             {{csrf_field()}}
             <p class="lead text-center">Kies uw producten</p>

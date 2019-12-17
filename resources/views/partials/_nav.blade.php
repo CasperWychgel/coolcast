@@ -9,10 +9,12 @@
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="/locations/add">Add location</a>
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                    <a class="btn btn-warning" href="{{route('notify')}}">Notificaties</a>
+                    <a href="{{route('locations')}}" class="btn btn-info">Locatie overzicht</a>
+                </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route('notify')}}">Notificaties</a>
             @foreach($locations as $location)
                 <li class="nav-item">
                     <a class="nav-link" href="/locations/{{ $location->id }}/show">{{ $location->name }}</a>

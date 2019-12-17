@@ -39,4 +39,10 @@ class LocationController extends Controller
             'locations' =>Location::where('id', $id)->get()
         ]);
     }
+
+    public function deleteall(Request $request)
+    {
+        Location::whereIn('id', $request->input('location'))->delete();
+        return redirect('/');
+    }
 }
