@@ -26,7 +26,7 @@ class LocationController extends Controller
             'name' => ['required', 'string', 'unique:locations,name', 'max:255']
         ]);
 
-        $replace = ['de ', 'het ', 'een ', 'De ', 'Het ', 'Een '];
+        $replace = ['de ', 'het ', 'een ', 'De ', 'Het ', 'Een ', "Mijn ", "mijn "];
 
         $location = Location::create(str_replace($replace, '', $attributes));
 
