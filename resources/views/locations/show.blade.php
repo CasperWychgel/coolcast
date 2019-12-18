@@ -20,33 +20,31 @@
     <form method="post" id="deleteform">
         {{ csrf_field() }}
         <input type="hidden" name="_method" value="delete">
-        <div class="card-body">
-            @foreach ($invproducts as $invproduct)
-                <div class="container-fluid mb-2 bg-card">
-                        <div class="card-body">
-                            <div class="col d-flex justify-content-between">
-                                <div>
-                                    <h5 class="card-title">{{$invproduct->name}}</h5>
-                                    <p class="card-text">{{$invproduct->expiration_date}}</p>
-                                </div>
-
-                                <div class="editshow2">
-                                    <input type="checkbox" class="custom-control-input selectbox" name="product[]"
-                                           value="{{$invproduct->id}}" id="{{$invproduct->id}}">
-                                    <label class="custom-control-label" for="{{$invproduct->id}}"></label>
-                                    <!--<a class="text-white btn btn-light bg-transparent"
-                                       href="/products/{{$invproduct->id}}/edit" role="button">Edit</a>-->
-                                </div>
-                            </div>
+        @foreach ($invproducts as $invproduct)
+            <div class="card bg-card mb-2">
+                <div class="card-body">
+                    <div class="col d-flex justify-content-between">
+                        <div>
+                            <h5 class="card-title">{{$invproduct->name}}</h5>
+                            <p class="card-text">{{$invproduct->expiration_date}}</p>
                         </div>
+
+                        <div class="editshow2">
+                            <input type="checkbox" class="custom-control-input selectbox" name="product[]"
+                                   value="{{$invproduct->id}}" id="{{$invproduct->id}}" onclick="myFunction()">
+                            <label class="custom-control-label" for="{{$invproduct->id}}"></label>
+                        <a class="text-white bg-transparent" href="/products/{{$invproduct->id}}/edit">Edit</a>
+                        </div>
+                    </div>
                 </div>
-            @endforeach
-        </div>
+            </div>
+            </div>
+        @endforeach
     </form>
     <script>
         $('.selectall').click(function () {
             $('.selectbox').prop('checked', $(this).prop('checked'))
-        })
+        });
     </script>
 
     @include('partials._empty-error')
