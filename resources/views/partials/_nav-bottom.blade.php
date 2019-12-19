@@ -7,7 +7,7 @@
 --}}
 </div>
 
-<div class="deleteButton d-flex justify-content-center fixed-bottom p-2">
+<div class="deleteButton justify-content-center fixed-bottom p-2" style="display: none">
     <button form="deleteform" formaction="{{ route('deleteall') }}" type="submit" class="btn-circle-l btn-danger align-self-center d-flex">
         <img src="/img/delete.png" alt="" width="20" height="20" class="align-self-center center ml-4">
     </button>

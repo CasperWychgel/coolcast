@@ -29,22 +29,43 @@
                             <p class="card-text">{{$invproduct->expiration_date}}</p>
                         </div>
 
-                        <div class="editshow2">
+                        <div class="">
                             <input type="checkbox" class="custom-control-input selectbox" name="product[]"
-                                   value="{{$invproduct->id}}" id="{{$invproduct->id}}" onclick="myFunction()">
+                                   value="{{$invproduct->id}}" id="{{$invproduct->id}}">
                             <label class="custom-control-label" for="{{$invproduct->id}}"></label>
                         <a class="text-white bg-transparent" href="/products/{{$invproduct->id}}/edit">Edit</a>
                         </div>
                     </div>
                 </div>
-            </div>
+                <h1 class="hallo" style="display: none">hallo</h1>
             </div>
         @endforeach
     </form>
+
     <script>
         $('.selectall').click(function () {
             $('.selectbox').prop('checked', $(this).prop('checked'))
         });
+
+        let checkbox = document.getElementsByClassName('selectbox');
+        let deleteButton = document.getElementsByClassName("deleteButton");
+
+        for (let i = 0; i < checkbox.length; i++) {
+            checkbox[i].addEventListener('change', checkChecker);
+        }
+
+        function checkChecker() {
+            for (let i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked) {
+                    console.log("checked");
+                    deleteButton[0].style.display = "block";
+                } else {
+                    console.log("unchecked");
+                    deleteButton[0].style.display = "none";
+                }
+            }
+        }
+
     </script>
 
     @include('partials._empty-error')
