@@ -43,6 +43,7 @@ class LocationController extends Controller
     public function deleteall(Request $request)
     {
         Location::whereIn('id', $request->input('location'))->delete();
-        return redirect('/');
+        Inventoryproduct::where('location_id', $id)->delete();
+        return redirect('/locations');
     }
 }
