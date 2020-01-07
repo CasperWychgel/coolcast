@@ -27,3 +27,7 @@ Route::post('locations/add', 'LocationController@store');
 Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+
+Route::group(['middleware' => 'auth', 'auth.status'], function() {
+
+});
