@@ -10692,76 +10692,51 @@ a.text-dark:focus {
 .bg-card {
   background-color: #459ca5 !important;
 }
-.editshow{
+
+.editshow {
   display: none;
   margin-top: 25px;
   font-size: 21px;
   text-align: center;
-
-  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2s; /* Firefox < 16 */
-  -ms-animation: fadein 2s; /* Internet Explorer */
-  -o-animation: fadein 2s; /* Opera < 12.1 */
+  -webkit-animation: fadein 2s;
+  /* Safari, Chrome and Opera > 12.1 */
+  /* Firefox < 16 */
+  /* Internet Explorer */
+  /* Opera < 12.1 */
   animation: fadein 2s;
-  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2s; /* Firefox < 16 */
-  -ms-animation: fadein 2s; /* Internet Explorer */
-  -o-animation: fadein 2s; /* Opera < 12.1 */
+  -webkit-animation: fadein 2s;
+  /* Safari, Chrome and Opera > 12.1 */
+  /* Firefox < 16 */
+  /* Internet Explorer */
+  /* Opera < 12.1 */
   animation: fadein 2s;
 }
+
 @keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* Firefox < 16 */
-@-moz-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
 
 /* Safari, Chrome and Opera > 12.1 */
+
 @-webkit-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* Internet Explorer */
-@-ms-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
 
 /* Opera < 12.1 */
-@-o-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-.badgebox
-{
-  opacity: 0;
-}
 
-.badgebox + .badge
-{
-  /* Move the check mark away when unchecked */
-  text-indent: -999999px;
-  /* Makes the badge's width stay the same checked and unchecked */
-  width: 27px;
-}
-
-.badgebox:focus + .badge
-{
-  /* Set something to make the badge looks focused */
-  /* This really depends on the application, in my case it was: */
-
-  /* Adding a light border */
-  box-shadow: inset 0px 0px 5px;
-  /* Taking the difference out of the padding */
-}
-
-.badgebox:checked + .badge
-{
-  /* Move the check mark back when checked */
-  text-indent: 0;
-}

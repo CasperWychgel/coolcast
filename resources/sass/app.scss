@@ -13,90 +13,90 @@
 }
 
 .btn-circle {
-  display: inline-block;
-  font-weight: 400;
-  text-align: center;
-  vertical-align: middle;
-  width: 50px;
-  height: 50px;
-  padding: 6px 0px;
-  border-radius: 50%;
-  border: 0px;
-  text-align: center;
-  font-size: 12px;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    padding: 6px 0px;
+    border-radius: 50%;
+    border: 0px;
+    text-align: center;
+    font-size: 12px;
 }
 
 .btn-circle-l {
-  display: inline-block;
-  font-weight: 400;
-  text-align: center;
-  vertical-align: middle;
-  width: 70px;
-  height: 70px;
-  padding: 6px 0px;
-  border: 0px;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 12px;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    width: 70px;
+    height: 70px;
+    padding: 6px 0px;
+    border: 0px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
 }
 
 .bg-darkblue {
-  background-color: #1a2b61 !important;
+    background-color: #1a2b61 !important;
 }
 
 .bg-blue {
-  background-color: #243e91 !important;
+    background-color: #243e91 !important;
 }
 
 .bg-background {
-  background-color: #e6e8eb !important;
+    background-color: #e6e8eb !important;
 }
 
 .bg-card {
-  background-color: #459ca5 !important;
+    background-color: #459ca5 !important;
 }
 .editshow{
-  display: none;
-  margin-top: 25px;
-  font-size: 21px;
-  text-align: center;
+    display: none;
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
 
-  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2s; /* Firefox < 16 */
-  -ms-animation: fadein 2s; /* Internet Explorer */
-  -o-animation: fadein 2s; /* Opera < 12.1 */
-  animation: fadein 2s;
-  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2s; /* Firefox < 16 */
-  -ms-animation: fadein 2s; /* Internet Explorer */
-  -o-animation: fadein 2s; /* Opera < 12.1 */
-  animation: fadein 2s;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+    animation: fadein 2s;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+    animation: fadein 2s;
 }
 @keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 /* Opera < 12.1 */
 @-o-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
