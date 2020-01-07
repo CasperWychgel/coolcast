@@ -27,7 +27,9 @@
 
 @yield ('content')
 
+@if (request()->route()->getName() !== 'add')
 @include('partials._nav-bottom')
+@endif
 
 
 

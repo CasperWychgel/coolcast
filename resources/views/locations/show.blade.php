@@ -5,7 +5,7 @@
         <div class="jumbotron jumbotron-fluid bg-transparent mb-0">
             <div class="container">
                 @foreach ($locations as $location)
-                <h1 class="display-4 text-center">Alle producten in de {{$location->name}}</h1>
+                <h1 class="display-4 text-center">Alle producten op locatie '{{$location->name}}'</h1>
                 <p class="lead"></p>
                 @endforeach
             </div>
@@ -43,7 +43,7 @@
                 $('.selectbox').prop('checked',$(this).prop('checked'))
             })
         </script>
-        
+
 @include('partials._empty-error')
 
 @endsection
