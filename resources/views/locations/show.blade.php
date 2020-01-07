@@ -45,24 +45,37 @@
     <script>
         $('.selectall').click(function () {
             $('.selectbox').prop('checked', $(this).prop('checked'))
+            checkChecker()
         });
 
-        let checkbox = document.getElementsByClassName('selectbox');
-        let deleteButton = document.getElementsByClassName("deleteButton");
+        let deleteButton = document.getElementsByClassName("deleteButton"); // deletebutton
+        let checkbox = document.getElementsByClassName('selectbox'); //checkboxes
+        let test = [];
+        
+        console.log(checkbox[1].id) // manier om het ID te krijgen  
+   
 
         for (let i = 0; i < checkbox.length; i++) {
             checkbox[i].addEventListener('change', checkChecker);
         }
 
+
         function checkChecker() {
+            var unchecked = 0;
+            var checked = 0
             for (let i = 0; i < checkbox.length; i++) {
-                if (checkbox[i].checked) {
-                    console.log("checked");
-                    deleteButton[0].style.display = "block";
+                if(checkbox[i].checked){
+                   checked++
                 } else {
-                    console.log("unchecked");
-                    deleteButton[0].style.display = "none";
+                    unchecked++;
+                    console.log(unchecked)
                 }
+            }
+            if(checkbox.length = unchecked){
+                deleteButton[0].style.display = "none";
+            }
+            if(checked > 0){
+                deleteButton[0].style.display = "block";
             }
         }
 
