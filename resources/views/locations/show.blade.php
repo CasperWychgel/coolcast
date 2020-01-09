@@ -15,20 +15,6 @@
                 <label class="custom-control-label" for="selectall">Selecteer alle producten</label>
             </div>
         </div>
-        <form method="post" id="deleteform">
-            {{ csrf_field() }}
-            <input type="hidden" name="_method" value="delete">
-            <div class="card-body">
-                @foreach ($invproducts as $invproduct)
-                    <div class="card mb-2">
-                        <div class="card-body bg-card">
-                                @if ($invproduct->expiration_date<$red)
-                                <div class="red"></div>
-                            @elseif (($invproduct->expiration_date<=$orange))
-                                <div class="orange"></div>
-                            @else 
-                                <div class="green"></div>
-                            @endif
     </div>
 
     <form method="post" id="deleteform">
@@ -36,6 +22,13 @@
         <input type="hidden" name="_method" value="delete">
         @foreach ($invproducts as $invproduct)
             <div class="card bg-card mb-2">
+                @if ($invproduct->expiration_date<$red)
+                <div class="red"></div>
+            @elseif (($invproduct->expiration_date<=$orange))
+                <div class="orange"></div>
+            @else 
+                <div class="green"></div>
+            @endif
                 <div class="card-body">
                     <div class="col d-flex justify-content-between">
                         <div>

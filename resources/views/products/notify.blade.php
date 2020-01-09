@@ -17,28 +17,19 @@
         </div>
     </div>
 
-    <div class="card-body">
-        @foreach ($invproducts as $invproduct)
-            <div class="card mb-2">
-                <div class="card-body bg-card">
-
-                        @if ($invproduct->expiration_date<$red)
-                            <div class="red"></div>
-                        @elseif (($invproduct->expiration_date<=$orange))
-                            <div class="orange"></div>
-                        @else 
-                            <div class="green"></div>
-                        @endif
-                    
-                    <h5 class="card-title">{{$invproduct->name}}</h5>
-                    <div class="editshow">
-                        <a class="btn btn-primary" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a>
     <form method="post" id="deleteform">
         {{ csrf_field() }}
         <input type="hidden" name="_method" value="delete">
         <div class="card-body">
             @foreach ($invproducts as $invproduct)
                 <div class="card mb-2">
+                    @if ($invproduct->expiration_date<$red)
+                    <div class="red"></div>
+                @elseif (($invproduct->expiration_date<=$orange))
+                    <div class="orange"></div>
+                @else 
+                    <div class="green"></div>
+                @endif
                     <div class="card-body bg-card">
                         <h5 class="card-title">{{$invproduct->name}}</h5>
                         <p class="card-text">{{$invproduct->expiration_date}}</p>
