@@ -27,7 +27,9 @@ class LocationController extends Controller
             'name' => ['required', 'string', 'unique:locations,name', 'max:255']
         ]);
 
-        $location = Location::create($attributes);
+        $replace = ['de ', 'het ', 'een ', 'De ', 'Het ', 'Een ', "Mijn ", "mijn "];
+
+        $location = Location::create(str_replace($replace, '', $attributes));
 
         return redirect('locations/'.$location->id.'/show');
     }

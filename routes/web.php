@@ -21,5 +21,5 @@ Route::delete('/deleteall','ProductController@deleteall')->name('deleteall');
 
 Route::get('/locations', 'LocationController@index')->name('locations');
 Route::get('/locations/{id}/show', 'LocationController@show');
-Route::get('locations/add', 'LocationController@create');
+Route::get('locations/add', 'LocationController@create')->name('addLocation');
 Route::post('locations/add', 'LocationController@store');
