@@ -17,9 +17,9 @@
             {{csrf_field()}}
             <p class="lead text-center">Kies uw producten</p>
             <div class="input-group mb-3 shadow-lg">
-                <select name="name[]" class="custom-select myselect" multiple>
+                <select name="product_id[]" class="custom-select myselect" multiple>
                     @foreach ($products as $product)
-                        <option value="{{$product->name}}">{{$product->name}}</option>
+                        <option value="{{$product->id}}">{{$product->name}}</option>
                     @endforeach
                 </select>
             </div>

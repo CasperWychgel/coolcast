@@ -40,9 +40,9 @@ class ProductController extends Controller
     {
         $nowdate = Carbon::now();
 
-        foreach ($request->input('name') as $name) {
+        foreach ($request->input('product_id') as $product_id) {
             $invproduct = new Inventoryproduct();
-            $invproduct->name = $name;
+            $invproduct->product_id = $product_id;
             $invproduct->expiration_date = $nowdate->addDays(14);
             $invproduct->location_id = request('location');
             $invproduct->save();

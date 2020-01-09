@@ -23,7 +23,7 @@
                 @foreach ($invproducts as $invproduct)
                     <div class="card mb-2">
                         <div class="card-body bg-card">
-                            <h5 class="card-title">{{$invproduct->name}}</h5>
+                            <h5 class="card-title">{{$invproduct->id->name}}</h5>
                             <p class="card-text">{{$invproduct->expiration_date}}</p>
                             <div class="editshow">
                                 <i class="fas fa-trash"></i>
