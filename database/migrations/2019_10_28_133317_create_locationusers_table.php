@@ -13,9 +13,9 @@ class CreateLocationusersTable extends Migration
      */
     public function up()
     {
-        Schema::create('locationusers', function (Blueprint $table) {
+        Schema::create('location_users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('users_id');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('location_id');
 
             $table->timestamps();
@@ -29,6 +29,6 @@ class CreateLocationusersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('locationusers');
+        Schema::dropIfExists('location_users');
     }
 }

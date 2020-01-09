@@ -3,16 +3,16 @@
 @section('content')
     <div class="jumbotron jumbotron-fluid bg-transparent mb-0">
         <div class="container">
-            @foreach ($invproducts as $invproduct)
-            <h1 class="display-4 text-center">{{$invproduct->name}}</h1>
+            @foreach ($locationproducts as $locationproduct)
+            <h1 class="display-4 text-center">{{$locationproduct->name}}</h1>
             @endforeach
         </div>
     </div>
     <div class="container">
         <form id="" method="POST" action="">
             {{csrf_field()}}
-            <input type="hidden" value="{{$invproduct->name}}" name="name">
-            <input type="hidden" value="{{$invproduct->expiration_date}}" name="expiration_date">
+            <input type="hidden" value="{{$locationproduct->name}}" name="name">
+            <input type="hidden" value="{{$locationproduct->expiration_date}}" name="expiration_date">
             <div class="input-group mb-3 shadow-lg">
                 <div class="input-group-prepend">
                     <label class="input-group-text" for="inputGroupSelect02">Location</label>

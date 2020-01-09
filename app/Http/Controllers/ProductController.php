@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Inventoryproduct;
-use App\Property;
 use Illuminate\Http\Request;
 use App\Location;
 use App\Product;
+use App\Locationproduct;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
@@ -22,7 +21,7 @@ class ProductController extends Controller
     {
         //    $products =DB::table('products')->get();
         return view('products.index', [
-            'invproducts' => Inventoryproduct::all()->sortBy('date',0,false)
+            'locationproducts' => Locationproduct::all()->sortBy('date',0,false)
         ]);
     }
 
@@ -41,36 +40,36 @@ class ProductController extends Controller
         $nowdate = Carbon::now();
 
         foreach ($request->input('product_id') as $product_id) {
-            $invproduct = new Inventoryproduct();
-            $invproduct->product_id = $product_id;
-            $invproduct->expiration_date = $nowdate->addDays(14);
-            $invproduct->location_id = request('location');
-            $invproduct->save();
+            $locationproduct = new Locationproduct();
+            $locationproduct->product_id = $product_id;
+            $locationproduct->expiration_date = $nowdate->addDays(14);
+            $locationproduct->location_id = request('location');
+            $locationproduct->save();
         }
 
-        return redirect('locations/'.$invproduct->location_id.'/show');
+        return redirect('locations/'.$locationproduct->location_id.'/show');
     }
 
 
     public function edit($id)
     {
         return view('products.edit', [
-            'invproducts' =>Inventoryproduct::where('id', $id)->get(),
+            'locationproducts' =>Locationproduct::where('id', $id)->get(),
             'locations' => Location::all(),
         ]);
     }
 
     public function update(Request $request,$id)
     {
-        $invproduct = Inventoryproduct::find($id);
+        $locationproduct = Locationproduct::find($id);
 
-        $invproduct->name = request('name');
+        $locationproduct->name = request('name');
 
-        $invproduct->expiration_date = request('expiration_date');
+        $locationproduct->expiration_date = request('expiration_date');
 
-        $invproduct->location_id = request('location');
+        $locationproduct->location_id = request('location');
 
-        $invproduct->save();
+        $locationproduct->save();
 
         return redirect('/home')
             ->with('succes','Uw product is bijgewerkt');
@@ -83,7 +82,7 @@ class ProductController extends Controller
 
     public function deleteall(Request $request)
     {
-        Inventoryproduct::whereIn('id', $request->input('product'))->delete();
+        Locationproduct::whereIn('id', $request->input('product'))->delete();
         return redirect('/');
     }
 
@@ -93,7 +92,7 @@ class ProductController extends Controller
         $checkdate = Carbon::now()->addDays(4);
 
         return view('products.notify', [
-            'invproducts' => Inventoryproduct::all()->where('expiration_date', '<=', $checkdate)->sortBy('date',0,false)
+            'locationproducts' => Locationproduct::all()->where('expiration_date', '<=', $checkdate)->sortBy('date',0,false)
         ]);
 
     }

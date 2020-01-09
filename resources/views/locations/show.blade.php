@@ -20,18 +20,18 @@
             {{ csrf_field() }}
             <input type="hidden" name="_method" value="delete">
             <div class="card-body">
-                @foreach ($invproducts as $invproduct)
+                @foreach ($locationproducts as $locationproduct)
                     <div class="card mb-2">
                         <div class="card-body bg-card">
-                            <h5 class="card-title">{{$invproduct->id->name}}</h5>
-                            <p class="card-text">{{$invproduct->expiration_date}}</p>
+                            <h5 class="card-title">{{$locationproduct->id->name}}</h5>
+                            <p class="card-text">{{$locationproduct->expiration_date}}</p>
                             <div class="editshow">
                                 <i class="fas fa-trash"></i>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input selectbox" name="product[]" value="{{$invproduct->id}}" id="{{$invproduct->id}}">
-                                    <label class="custom-control-label" for="{{$invproduct->id}}"></label>
+                                    <input type="checkbox" class="custom-control-input selectbox" name="product[]" value="{{$locationproduct->id}}" id="{{$locationproduct->id}}">
+                                    <label class="custom-control-label" for="{{$locationproduct->id}}"></label>
                                 </div>
-                                <a class="text-white btn btn-light bg-transparent" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a>
+                                <a class="text-white btn btn-light bg-transparent" href="/products/{{$locationproduct->id}}/edit" role="button">Edit</a>
                             </div>
                         </div>
                     </div>
