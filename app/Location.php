@@ -8,13 +8,8 @@ class Location extends Model
 {
     public $guarded = [];
 
-    public function locationproducts()
+    public function products()
     {
-        return $this->hasMany('App\Locationproduct');
-    }
-
-    public function locationusers()
-    {
-        return $this->hasMany('App\Locationuser');
+        return $this->belongsToMany(Product::class);
     }
 }

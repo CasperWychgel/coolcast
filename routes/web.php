@@ -33,3 +33,11 @@ Route::group(['middleware' => 'auth'], function() {
 
 Route::get('/welcome', 'HomeController@welcome')->name('welcome');
 
+//Route::get('/', function () {
+//    $products = \App\Product::all();
+//
+//    $locations = \App\Location::all();
+//
+//    $products->locations()->attach($locations);
+//    dd($locations);
+//});

@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    public function locationproducts()
+    public function locations()
     {
-        return $this->hasMany('App\Locationproduct');
+        return $this->belongsToMany(Location::class);
     }
 }

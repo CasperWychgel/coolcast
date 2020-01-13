@@ -23,7 +23,7 @@
                 @foreach ($locationproducts as $locationproduct)
                     <div class="card mb-2">
                         <div class="card-body bg-card">
-                            <h5 class="card-title">{{$locationproduct->id->name}}</h5>
+                            <h5 class="card-title">{{$locationproduct->product_id}}</h5>
                             <p class="card-text">{{$locationproduct->expiration_date}}</p>
                             <div class="editshow">
                                 <i class="fas fa-trash"></i>
@@ -38,6 +38,7 @@
                 @endforeach
             </div>
         </form>
+
         <script>
             $('.selectall').click(function () {
                 $('.selectbox').prop('checked',$(this).prop('checked'))
