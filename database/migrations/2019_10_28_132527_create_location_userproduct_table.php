@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLocationProductTable extends Migration
+class CreateLocationUserproductTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,16 @@ class CreateLocationProductTable extends Migration
      */
     public function up()
     {
-        Schema::create('location_product', function (Blueprint $table) {
+        Schema::create('location_userproduct', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->unsignedBigInteger('userproduct_id');
+
             $table->unsignedBigInteger('location_id');
+
+            $table->foreign('userproduct_id')->references('id')->on('userproducts');
+
             $table->foreign('location_id')->references('id')->on('locations');
-            $table->date('expiration_date');
+
 
             $table->timestamps();
         });
@@ -32,6 +35,6 @@ class CreateLocationProductTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('location_product');
+        Schema::dropIfExists('location_userproduct');
     }
 }

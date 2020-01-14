@@ -20,7 +20,7 @@ class ProductController extends Controller
     {
         //    $products =DB::table('products')->get();
         return view('products.index', [
-            'locationproducts' => Location::with('products')->get()
+            'locationproducts' => Location::with('userproducts')->get()
         ]);
     }
 
@@ -40,8 +40,8 @@ class ProductController extends Controller
         $location_id = request('location');
 
         foreach ($request->input('product_id') as $product_id) {
-            $products = \App\Product::find($product_id);
-            $locations = \App\Location::where('id', $location_id)->get();
+            $products = Product::find($product_id);
+            $locations = Location::where('id', $location_id)->get();
             $products->locations()->attach($locations);
         }
 

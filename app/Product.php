@@ -10,4 +10,9 @@ class Product extends Model
     {
         return $this->belongsToMany(Location::class);
     }
+
+    public function userproducts()
+    {
+        return $this->belongsToMany(Userproduct::class);
+    }
 }

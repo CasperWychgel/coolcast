@@ -1,4 +1,4 @@
-@if(empty($product))
+@if(empty($userproduct))
     <div class="d-block d-sm-none">
 
             <div class="container mb-5">
