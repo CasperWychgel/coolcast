@@ -20,7 +20,7 @@ class ProductController extends Controller
     {
         //    $products =DB::table('products')->get();
         return view('products.index', [
-            'locationproducts' => Product::all()->sortBy('date',0,false)
+            'locationproducts' => Location::with('products')->get()
         ]);
     }
 
@@ -45,7 +45,7 @@ class ProductController extends Controller
             $products->locations()->attach($locations);
         }
 
-        //return redirect('locations/'.$locationproduct->location_id.'/show');
+        return redirect('locations/'.$location_id.'/show');
     }
 
 
@@ -90,7 +90,7 @@ class ProductController extends Controller
         $checkdate = Carbon::now()->addDays(4);
 
         return view('products.notify', [
-            'locationproducts' => Product::all()->where('expiration_date', '<=', $checkdate)->sortBy('date',0,false)
+            'locationproducts' => Product::with('products')->where('expiration_date', '<=', $checkdate)->get()
         ]);
 
     }

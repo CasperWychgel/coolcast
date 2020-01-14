@@ -18,10 +18,11 @@
         <input type="hidden" name="_method" value="delete">
         <div class="card-body">
             @foreach ($locationproducts as $locationproduct)
+                @foreach ($locationproduct->products as $product)
                 <div class="card mb-2">
                     <div class="card-body bg-card">
-                        <h5 class="card-title">{{$locationproduct->name}}</h5>
-                        <p class="card-text">{{$locationproduct->expiration_date}}</p>
+                        <h5 class="card-title">{{$product->name}}</h5>
+                        <p class="card-text">{{$product->expiration_date}}</p>
                         <div class="editshow">
                             <i class="fas fa-trash"></i>
                             <label for="danger" class="btn btn-danger">Verwijder<input type="checkbox" id="danger" name="product[]" value="{{$locationproduct->id}}" class="badgebox selectbox"><span class="badge">&check;</span></label>
@@ -29,6 +30,7 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
             @endforeach
         </div>
     </form>
