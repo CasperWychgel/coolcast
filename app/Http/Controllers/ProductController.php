@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Location;
 use App\Product;
-use App\Locationproduct;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
@@ -21,7 +20,7 @@ class ProductController extends Controller
     {
         //    $products =DB::table('products')->get();
         return view('products.index', [
-            'locationproducts' => Locationproduct::all()->sortBy('date',0,false)
+            'locationproducts' => Product::all()->sortBy('date',0,false)
         ]);
     }
 
@@ -38,30 +37,29 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $nowdate = Carbon::now();
+        $location_id = request('location');
 
         foreach ($request->input('product_id') as $product_id) {
-            $locationproduct = new Locationproduct();
-            $locationproduct->product_id = $product_id;
-            $locationproduct->expiration_date = $nowdate->addDays(14);
-            $locationproduct->location_id = request('location');
-            $locationproduct->save();
+            $products = \App\Product::find($product_id);
+            $locations = \App\Location::where('id', $location_id)->get();
+            $products->locations()->attach($locations);
         }
 
-        return redirect('locations/'.$locationproduct->location_id.'/show');
+        //return redirect('locations/'.$locationproduct->location_id.'/show');
     }
 
 
     public function edit($id)
     {
         return view('products.edit', [
-            'locationproducts' =>Locationproduct::where('id', $id)->get(),
+            'locationproducts' =>Product::where('id', $id)->get(),
             'locations' => Location::all(),
         ]);
     }
 
     public function update(Request $request,$id)
     {
-        $locationproduct = Locationproduct::find($id);
+        $locationproduct = Product::find($id);
 
         $locationproduct->name = request('name');
 
@@ -92,7 +90,7 @@ class ProductController extends Controller
         $checkdate = Carbon::now()->addDays(4);
 
         return view('products.notify', [
-            'locationproducts' => Locationproduct::all()->where('expiration_date', '<=', $checkdate)->sortBy('date',0,false)
+            'locationproducts' => Product::all()->where('expiration_date', '<=', $checkdate)->sortBy('date',0,false)
         ]);
 
     }

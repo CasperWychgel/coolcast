@@ -16,8 +16,10 @@ class CreateLocationProductTable extends Migration
         Schema::create('location_product', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->unsignedBigInteger('location_id');
-            $table->date('expiration_date');
+            $table->foreign('location_id')->references('id')->on('locations');
+            //$table->date('expiration_date');
 
             $table->timestamps();
         });

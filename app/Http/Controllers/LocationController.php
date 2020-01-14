@@ -41,10 +41,9 @@ class LocationController extends Controller
     }
 
     public function show($id) {
-
         return view('locations.show', [
-            'locationproducts' => Locationproduct::where('location_id', $id)->get(),
-            'locations' => Location::where('id', $id)->get(),
+            'locations' => Location::with('products')->get(),
+            'locationproducts' => Product::with('locations')->get(),
         ]);
     }
 }

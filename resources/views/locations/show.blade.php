@@ -21,6 +21,7 @@
             <input type="hidden" name="_method" value="delete">
             <div class="card-body">
                 @foreach ($locationproducts as $locationproduct)
+                    {{dd($locationproduct)}}
                     <div class="card mb-2">
                         <div class="card-body bg-card">
                             <h5 class="card-title">{{$locationproduct->product_id}}</h5>

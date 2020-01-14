@@ -22,7 +22,9 @@
                     <a class="nav-link" href="/locations/add">Add location</a>
                 </li>
                 <li class="nav-item">
+{{--
                     <a class="nav-link" href="{{route('notify')}}">Notificaties</a>
+--}}
                 @foreach($locations as $location)
                     <li class="nav-item">
                         <a class="nav-link" href="/locations/{{ $location->id }}/show">{{ $location->name }}</a>
