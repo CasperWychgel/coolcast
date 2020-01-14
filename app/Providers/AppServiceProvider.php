@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 use App\Location;
 
@@ -27,9 +29,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('partials._nav', function ($view) {
-            $locations = Location::all();
-            $view->with('locations', $locations);
-        });
+        //if (Auth::check()) {
+            view()->composer('partials._nav', function ($view) {
+                $user = Auth::user();
+                $locations = $user->locations()->get();
+                $view->with('locations', $locations);
+            });
+        //}
     }
 }

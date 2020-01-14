@@ -19,8 +19,7 @@ class CreateLocationProductTable extends Migration
             $table->foreign('product_id')->references('id')->on('products');
             $table->unsignedBigInteger('location_id');
             $table->foreign('location_id')->references('id')->on('locations');
-            //$table->date('expiration_date');
-
+            $table->date('expiration_date');
             $table->timestamps();
         });
     }

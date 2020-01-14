@@ -12,4 +12,9 @@ class Location extends Model
     {
         return $this->belongsToMany(Product::class);
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

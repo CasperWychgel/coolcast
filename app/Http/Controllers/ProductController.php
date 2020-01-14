@@ -36,16 +36,16 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $nowdate = Carbon::now();
         $location_id = request('location');
 
         foreach ($request->input('product_id') as $product_id) {
-            $products = \App\Product::find($product_id);
-            $locations = \App\Location::where('id', $location_id)->get();
-            $products->locations()->attach($locations);
+            $products = Product::find($product_id);
+            $expiration_date = Carbon::now()->addDays($products->expiresafter);
+            $locations = Location::where('id', $location_id)->get();
+            $products->locations()->attach($locations, ['expiration_date' => $expiration_date]);
         }
 
-        //return redirect('locations/'.$locationproduct->location_id.'/show');
+        return redirect('locations/'.$location_id.'/show');
     }
 
 

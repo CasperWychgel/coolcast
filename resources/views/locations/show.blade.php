@@ -25,7 +25,7 @@
                     <div class="card mb-2">
                         <div class="card-body bg-card">
                             <h5 class="card-title">{{$product->name}}</h5>
-                            <p class="card-text">{{$product->expiration_date}}</p>
+                            <p class="card-text">{{$product->expiresafter}}</p>
                             <div class="editshow">
                                 <i class="fas fa-trash"></i>
                                 <div class="custom-control custom-checkbox">
