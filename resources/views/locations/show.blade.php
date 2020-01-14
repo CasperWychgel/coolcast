@@ -44,7 +44,10 @@
                         </div>
                     </div>
                 </div>
-                <h1 class="hallo" style="display: none">hallo</h1>
+                
+                @if ($invproduct->expiration_date<$red)
+                            <h1 class="warning">!</h1>
+                        @endif
             </div>
         @endforeach
     </form>

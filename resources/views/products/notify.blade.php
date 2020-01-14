@@ -41,6 +41,9 @@
                             <a class="text-white btn btn-light bg-transparent" href="/products/{{$invproduct->id}}/edit" role="button">Edit</a>
                         </div>
                     </div>
+                        @if ($invproduct->expiration_date<$red)
+                            <h1 class="warning">!</h1>
+                        @endif
                 </div>
             @endforeach
         </div>

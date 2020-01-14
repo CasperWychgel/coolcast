@@ -10715,6 +10715,13 @@ a.text-dark:focus {
     background: red;
     width: 15px;
 }
+.warning{
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 30px;
+  top: 29%;
+}
 
 .bg-card {
   background-color: #459ca5 !important;
