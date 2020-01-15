@@ -30,13 +30,16 @@ class LocationController extends Controller
     }
 
     public function store(Request $request) {
+        $user = Auth::user();
+
         $attributes = $request->validate([
-            'name' => ['required', 'string', 'unique:locations,name', 'max:255']
+            'name' => ['required', 'string', 'max:255']
         ]);
 
         $replace = ['de ', 'het ', 'een ', 'De ', 'Het ', 'Een ', "Mijn ", "mijn "];
 
         $location = Location::create(str_replace($replace, '', $attributes));
+        $location->users()->attach($user);
 
         return redirect('locations/'.$location->id.'/show');
     }
