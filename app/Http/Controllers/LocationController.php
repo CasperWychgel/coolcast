@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Copy;
 use Illuminate\Http\Request;
 use App\Location;
+use Illuminate\Support\Facades\Auth;
 use App\Product;
 use Illuminate\Support\Facades\DB;
 
@@ -17,8 +18,9 @@ class LocationController extends Controller
     }*/
 
     public function index() {
+        $user = Auth::user();
         return view('locations.index', [
-            'locations' => Location::all()
+            'locations' => $user->locations()->get()
         ]);
     }
 
@@ -27,6 +29,9 @@ class LocationController extends Controller
     }
 
     public function store(Request $request) {
+
+        $user = Auth::user();
+
         $attributes = $request->validate([
             'name' => ['required', 'string', 'unique:locations,name', 'max:255']
         ]);
@@ -34,13 +39,17 @@ class LocationController extends Controller
         $replace = ['de ', 'het ', 'een ', 'De ', 'Het ', 'Een ', "Mijn ", "mijn "];
 
         $location = Location::create(str_replace($replace, '', $attributes));
+        $location->users()->attach($user);
 
         return redirect('locations/'.$location->id.'/show');
     }
 
     public function show($id) {
 
-        return view('locations.show', [
+        $currentLocation = Location::with('users')->where('id', $id)->first();
+
+        if (Auth::user()->hasAnyLocations($currentLocation->id)) {
+            return view('locations.show', [
 
             'copylocations' => DB::table('locations')->where('locations.id', $id)
             ->leftJoin('copy_location','locations.id','=','copy_location.location_id')
@@ -50,6 +59,10 @@ class LocationController extends Controller
             ->get(),
 
             'locations' => Location::where('id', $id)->get()
-        ]);
+
+            ]);
+        } else {
+            return redirect('home');
+        }
     }
 }

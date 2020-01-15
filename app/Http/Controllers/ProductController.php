@@ -20,7 +20,6 @@ class ProductController extends Controller
 
     public function index()
     {
-        //    $products =DB::table('products')->get();
         return view('products.index', [
             'copylocations' => DB::table('locations')
                 ->leftJoin('copy_location','locations.id','=','copy_location.location_id')
