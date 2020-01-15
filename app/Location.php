@@ -12,4 +12,13 @@ class Location extends Model
     {
         return $this->belongsToMany(Copy::class);
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+    public function hasAnyUsers($id) {
+        return null !== $this->users()->where('user_id', $id)->first();
+    }
 }

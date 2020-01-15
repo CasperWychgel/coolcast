@@ -8,9 +8,13 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    public function locationusers()
+    public function locations()
     {
-        return $this->hasMany('App\Locationuser');
+        return $this->belongsToMany(Location::class);
+    }
+
+    public function hasAnyLocations($id) {
+        return null !== $this->locations()->where('location_id', $id)->first();
     }
 
     use Notifiable;
