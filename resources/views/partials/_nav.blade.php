@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="/locations/add">Add location</a>
+                <a class="nav-link" href="/locations/add">Locatie toevoegen</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('notify')}}">Notificaties</a>

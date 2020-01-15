@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <form method="post" id="deleteform">
+    <form method="post" id="deleteform" class="mb-10">
         {{ csrf_field() }}
         <input type="hidden" name="_method" value="delete">
         @foreach ($invproducts as $invproduct)
@@ -36,11 +36,11 @@
                             <p class="card-text">{{$invproduct->expiration_date}}</p>
                         </div>
 
-                        <div class="">
-                            <input type="checkbox" class="custom-control-input selectbox" name="product[]"
+                        <div class="mt-3 pl-5">
+                            <input type="checkbox" class="custom-control-input selectbox mt-1" name="product[]"
                                    value="{{$invproduct->id}}" id="{{$invproduct->id}}">
-                            <label class="custom-control-label" for="{{$invproduct->id}}"></label>
-                        <a class="text-white bg-transparent" href="/products/{{$invproduct->id}}/edit">Edit</a>
+                            <label class="custom-control-label mt-1" for="{{$invproduct->id}}"></label>
+                        <a class="text-white bg-transparent mt-1" href="/products/{{$invproduct->id}}/edit"><img src="/img/edit.png" alt="" width="20" height="20" class="align-self-center center ml-4"></a>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,6 @@
 
         let deleteButton = document.getElementsByClassName("deleteButton"); // deletebutton
         let checkbox = document.getElementsByClassName('selectbox'); //checkboxes
-        let test = [];
         
         console.log(checkbox[1].id) // manier om het ID te krijgen  
    
@@ -85,7 +84,7 @@
                 deleteButton[0].style.display = "none";
             }
             if(checked > 0){
-                deleteButton[0].style.display = "block";
+                deleteButton[0].style.display = "flex";
             }
         }
 

@@ -13,14 +13,14 @@
     <div class="container text-black">
         <form id="" method="POST" action="/locations/add" >
             {{csrf_field()}}
-            <p class="lead text-center">What is the location called?</p>
+            <p class="lead text-center">Wat is de naam van de locatie?</p>
             <div class="input-group mb-3 shadow-lg">
                 <div class="input-group-prepend">
                     <label class="input-group-text" for="inputGroupSelect02">Locatie</label>
                 </div>
                 <input name="location" class="form-control">
             </div>
-            <button type="submit" name="action" class="text-white btn btn-block btn-info bg-darkblue shadow-lg">Add to your locations</button>
+            <button type="submit" name="action" class="text-white btn btn-block btn-info bg-darkblue shadow-lg">Locatie toevoegen</button>
         </form>
     </div>
 @endsection
