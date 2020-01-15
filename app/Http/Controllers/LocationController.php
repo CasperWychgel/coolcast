@@ -14,22 +14,26 @@ use Illuminate\Support\Facades\DB;
 class LocationController extends Controller
 {
 
-/*    public function __construct()
-    {
-        $this->middleware('auth');
-    }*/
+    /*    public function __construct()
+        {
+            $this->middleware('auth');
+        }*/
 
-    public function index() {
+    public function index()
+    {
+        $user = Auth::user();
         return view('locations.index', [
-            'locations' => Location::all()
+            'locations' => $user->locations()->get()
         ]);
     }
 
-    public function create() {
+    public function create()
+    {
         return view('locations.create');
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $user = Auth::user();
 
         $attributes = $request->validate([
@@ -41,20 +45,25 @@ class LocationController extends Controller
         $location = Location::create(str_replace($replace, '', $attributes));
         $location->users()->attach($user);
 
-        return redirect('locations/'.$location->id.'/show');
+        return redirect('locations/' . $location->id . '/show');
     }
 
     public function show($id) {
-/*    $locations = Location::where('id', $id)->get();
-    dd($locations);
-    $userId = Auth::user()->id;
-    $locationUsers = $locations->users()->get();
-    dd($locationUsers);
 
-    if ($locations->users() != Auth::user) {*/
-        return view('locations.show', [
-            'locationproducts' => Location::where('id', $id)->with('products')->get(),
-            'locations' => Location::where('id', $id)->get(),
-        ]);
+        $currentUser = Auth::user();
+        $currentLocation = Location::with('users')->where('id', $id)->first();
+        $authorizedUsers = $currentLocation->users()->get();
+
+        //dd($currentUser->hasAnyLocations($currentLocation->id));
+
+            if ($currentUser->hasAnyLocations($currentLocation->id)) {
+                return view('locations.show', [
+                    'locationproducts' => Location::where('id', $id)->with('products')->get(),
+                    'locations' => Location::where('id', $id)->get(),
+                ]);
+            } else {
+                return redirect('home');
+            }
+
     }
 }

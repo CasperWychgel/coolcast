@@ -13,6 +13,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Location::class);
     }
 
+    public function hasAnyLocations($id) {
+        return null !== $this->locations()->where('location_id', $id)->first();
+    }
+
     use Notifiable;
 
     /**
