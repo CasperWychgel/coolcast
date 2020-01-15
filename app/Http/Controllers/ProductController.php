@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Location;
 use App\Product;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
@@ -24,11 +25,12 @@ class ProductController extends Controller
         ]);
     }
 
-
     public function create()
     {
+        $user = Auth::user();
+
         return view('products.create', [
-            'locations' => Location::all(),
+            'locations' => $user->locations()->get(),
             'products' => Product::all()
         ]);
     }

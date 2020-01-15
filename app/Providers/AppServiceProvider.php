@@ -29,11 +29,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //if (Auth::check()) {
             view()->composer('partials._nav', function ($view) {
-                $user = Auth::user();
-                $locations = $user->locations()->get();
-                $view->with('locations', $locations);
+                if (Auth::check()) {
+                    $user = Auth::user();
+                    $locations = $user->locations()->get();
+                    $view->with('locations', $locations);
+                } else {
+                    $locations = [];
+                    $view->with('locations', $locations);
+                }
             });
         //}
     }

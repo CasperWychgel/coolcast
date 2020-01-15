@@ -18,7 +18,7 @@
                 <div class="input-group-prepend">
                     <label class="input-group-text" for="inputGroupSelect02">Locatie</label>
                 </div>
-                <input name="location" class="form-control">
+                <input name="name" class="form-control">
             </div>
             <button type="submit" name="action" class="text-white btn btn-block btn-info bg-darkblue shadow-lg">Add to your locations</button>
         </form>

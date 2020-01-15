@@ -7,6 +7,7 @@ use App\Locationproduct;
 use App\Property;
 use Illuminate\Http\Request;
 use App\Location;
+use Illuminate\Support\Facades\Auth;
 use App\Product;
 use Illuminate\Support\Facades\DB;
 
@@ -41,7 +42,13 @@ class LocationController extends Controller
     }
 
     public function show($id) {
+/*    $locations = Location::where('id', $id)->get();
+    dd($locations);
+    $userId = Auth::user()->id;
+    $locationUsers = $locations->users()->get();
+    dd($locationUsers);
 
+    if ($locations->users() != Auth::user) {*/
         return view('locations.show', [
             'locationproducts' => Location::where('id', $id)->with('products')->get(),
             'locations' => Location::where('id', $id)->get(),
