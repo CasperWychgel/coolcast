@@ -20,24 +20,27 @@
             {{ csrf_field() }}
             <input type="hidden" name="_method" value="delete">
             <div class="card-body">
-                @foreach ($locationproducts as $locationproduct)
-                    @foreach ($locationproduct->userproducts as $userproduct)
-                        {{--{{dd($locationproduct)}}--}}
+
+                @foreach ($copylocations as $copylocation)
+                    @if($copylocation->id == null)
+
+                        @else
                     <div class="card mb-2">
                         <div class="card-body bg-card">
-                            <h5 class="card-title">{{$userproduct->id}}</h5>
-                            <p class="card-text">{{$userproduct->expiration_date}}</p>
+                            <h5 class="card-title">{{$copylocation->name}}</h5>
+                            <p class="card-text">{{$copylocation->expiration_date}}</p>
                             <div class="editshow">
                                 <i class="fas fa-trash"></i>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input selectbox" name="product[]" value="{{$userproduct->id}}" id="{{$userproduct->id}}">
-                                    <label class="custom-control-label" for="{{$userproduct->id}}"></label>
+                                    <input type="checkbox" class="custom-control-input selectbox" name="product[]" value="{{$copylocation->copy_id}}" id="{{$copylocation->copy_id}}">
+                                    <label class="custom-control-label" for="{{$copylocation->copy_id}}"></label>
                                 </div>
-                                <a class="text-white btn btn-light bg-transparent" href="/products/{{$userproduct->id}}/edit" role="button">Edit</a>
+                                {{--{{dd($copylocation)}}--}}
+                                <a class="text-white btn btn-light bg-transparent" href="/products/{{$copylocation->copy_id}}/edit" role="button">Edit</a>
                             </div>
                         </div>
                     </div>
-                    @endforeach
+                    @endif
                 @endforeach
             </div>
         </form>

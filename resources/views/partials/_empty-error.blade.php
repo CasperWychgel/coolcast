@@ -1,4 +1,4 @@
-@if(empty($userproduct))
+@if($copylocation->id == null)
     <div class="d-block d-sm-none">
 
             <div class="container mb-5">

@@ -8,8 +8,8 @@ class Location extends Model
 {
     public $guarded = [];
 
-    public function userproducts()
+    public function copies()
     {
-        return $this->belongsToMany(Userproduct::class);
+        return $this->belongsToMany(Copy::class);
     }
 }

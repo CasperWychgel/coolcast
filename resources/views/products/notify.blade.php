@@ -1,5 +1,5 @@
 @extends ('layout')
-@if ($locationproduct->products->isempty())
+@if ($copylocations->isempty())
     <script>window.location = "/home";</script>
 @endif
 
@@ -7,7 +7,11 @@
 
     <div class="jumbotron jumbotron-fluid bg-transparent mb-0">
         <div class="container">
-            <h1 class="display-4 text-center">Pas op! deze {{count($locationproducts)}} producten gaan bijna over de datum</h1>
+            @if(count($copylocations ) == 1)
+                <h1 class="display-4 text-center">Pas op! dit product is bijna over de datum</h1>
+                @else
+                <h1 class="display-4 text-center">Pas op! deze {{count($copylocations)}} producten gaan bijna over de datum</h1>
+            @endif
         </div>
         <div class="container-fluid editshow">
             <div class="custom-control custom-checkbox">
@@ -21,22 +25,22 @@
         {{ csrf_field() }}
         <input type="hidden" name="_method" value="delete">
         <div class="card-body">
-            @foreach ($locationproducts as $locationproduct)
-                @foreach ($locationproduct->products as $product)
-                <div class="card mb-2">
-                    <div class="card-body bg-card">
-                        <h5 class="card-title">{{$product->name}}</h5>
-                        <p class="card-text">{{$product->expiration_date}}</p>
-                        <div class="editshow">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input selectbox" name="product[]" value="{{$product->id}}" id="{{$product->id}}">
-                                <label class="custom-control-label" for="{{$product->id}}">Product verwijderen?</label>
+            @foreach ($copylocations as $copylocation)
+                @if($copylocation->id == null)
+
+                @else
+                    <div class="card mb-2">
+                        <div class="card-body bg-card">
+                            <h5 class="card-title">{{$copylocation->name}}</h5>
+                            <p class="card-text">{{$copylocation->expiration_date}}</p>
+                            <div class="editshow">
+                                <i class="fas fa-trash"></i>
+                                <label for="danger" class="btn btn-danger">Verwijder<input type="checkbox" id="danger" name="product[]" value="{{$copylocation->product_id}}" class="badgebox selectbox"><span class="badge">&check;</span></label>
+                                <a class="text-white btn btn-light bg-transparent" href="/products/{{$copylocation->product_id}}/edit" role="button">Edit</a>
                             </div>
-                            <a class="text-white btn btn-light bg-transparent" href="/products/{{$product->id}}/edit" role="button">Edit</a>
                         </div>
                     </div>
-                </div>
-                @endforeach
+                @endif
             @endforeach
         </div>
     </form>

@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Inventoryproduct;
-use App\Locationproduct;
-use App\Property;
+use App\Copy;
 use Illuminate\Http\Request;
 use App\Location;
 use App\Product;
@@ -43,8 +41,15 @@ class LocationController extends Controller
     public function show($id) {
 
         return view('locations.show', [
-            'locationproducts' => Location::where('id', $id)->with('userproducts')->get(),
-            'locations' => Location::where('id', $id)->get(),
+
+            'copylocations' => DB::table('locations')->where('locations.id', $id)
+            ->leftJoin('copy_location','locations.id','=','copy_location.location_id')
+                ->leftJoin('copies','copies.id','=','copy_location.copy_id')
+                ->leftJoin('copy_product', 'copies.id','=','copy_product.copy_id')
+                ->leftJoin('products','products.id','=','copy_product.product_id')
+            ->get(),
+
+            'locations' => Location::where('id', $id)->get()
         ]);
     }
 }
