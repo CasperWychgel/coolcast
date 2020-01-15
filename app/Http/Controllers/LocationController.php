@@ -48,22 +48,17 @@ class LocationController extends Controller
         return redirect('locations/' . $location->id . '/show');
     }
 
-    public function show($id) {
-
-        $currentUser = Auth::user();
+    public function show($id)
+    {
         $currentLocation = Location::with('users')->where('id', $id)->first();
-        $authorizedUsers = $currentLocation->users()->get();
 
-        //dd($currentUser->hasAnyLocations($currentLocation->id));
-
-            if ($currentUser->hasAnyLocations($currentLocation->id)) {
-                return view('locations.show', [
-                    'locationproducts' => Location::where('id', $id)->with('products')->get(),
-                    'locations' => Location::where('id', $id)->get(),
-                ]);
-            } else {
-                return redirect('home');
-            }
-
+        if (Auth::user()->hasAnyLocations($currentLocation->id)) {
+            return view('locations.show', [
+                'locationproducts' => Location::where('id', $id)->with('products')->get(),
+                'locations' => Location::where('id', $id)->get()
+            ]);
+        } else {
+            return redirect('home');
+        }
     }
 }
