@@ -21,7 +21,7 @@
     <title>Coolcast</title>
 </head>
 
-<body class="bg-background">
+<body class="bg-background container-fluid">
 
 @include('partials._nav')
 

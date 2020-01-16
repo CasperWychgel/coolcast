@@ -21,6 +21,8 @@ class ProductController extends Controller
     public function index()
     {
         $id = Auth::id();
+        $red = Carbon::now();
+        $orange = Carbon::now()->addDays(5);
 
         return view('products.index', [
             'copylocations' => DB::table('users')
@@ -30,7 +32,10 @@ class ProductController extends Controller
                 ->leftJoin('copies','copies.id','=','copy_location.copy_id')
                 ->leftJoin('copy_product', 'copies.id','=','copy_product.copy_id')
                 ->leftJoin('products','products.id','=','copy_product.product_id')
-                ->where('location_user.user_id', $id)->get()
+                ->where('location_user.user_id', $id)->get(),
+
+                "red" => $red,
+                "orange" => $orange
         ]);
     }
 
@@ -122,6 +127,8 @@ class ProductController extends Controller
 
     public function notify()
     {
+        $red = Carbon::now();
+        $orange = Carbon::now()->addDays(5);
         $checkdate = Carbon::now()->addDays(4);
 
         return view('products.notify', [
@@ -130,9 +137,22 @@ class ProductController extends Controller
                 ->leftJoin('copies','copies.id','=','copy_location.copy_id')
                 ->leftJoin('copy_product', 'copies.id','=','copy_product.copy_id')
                 ->leftJoin('products','products.id','=','copy_product.product_id')
-                ->where('expiration_date', '<=', $checkdate)->get()
+                ->where('expiration_date', '<=', $checkdate)->get(),
+            
+            "red" => $red,
+            "orange" => $orange
+
         ]);
 
     }
+
+    public function orderby($I)
+    // $I is either name or experation_date
+    {
+        return view('products.notify', [
+            'invproducts' => Inventoryproduct::all()->sortBy("$I")
+        ]);
+    }
+
 
 }

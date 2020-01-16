@@ -24,7 +24,7 @@
                 </select>
             </div>
 
-            <button type="submit" name="action" class="text-white btn btn-block btn-light bg-transparent shadow-lg">Werk je CoolCast bij</button>
+            <button type="submit" name="action" class="text-white btn btn-block btn-info bg-darkblue shadow-lg">Werk je CoolCast bij</button>
         </form>
     </div>
 

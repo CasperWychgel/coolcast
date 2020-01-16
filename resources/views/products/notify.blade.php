@@ -30,17 +30,29 @@
 
                 @else
                     <div class="card mb-2">
+                    @if ($invproduct->expiration_date<$red)
+                    <div class="red"></div>
+                    @elseif (($invproduct->expiration_date<=$orange))
+                    <div class="orange"></div>
+                    @else 
+                    <div class="green"></div>
+                    @endif
+
+                    
                         <div class="card-body bg-card">
                             <h5 class="card-title">{{$copylocation->name}}</h5>
                             <p class="card-text">{{$copylocation->expiration_date}}</p>
-                            <div class="editshow">
+                        <div class="editshow">
                                 <i class="fas fa-trash"></i>
                                 <label for="danger" class="btn btn-danger">Verwijder<input type="checkbox" id="danger" name="product[]" value="{{$copylocation->product_id}}" class="badgebox selectbox"><span class="badge">&check;</span></label>
                                 <a class="text-white btn btn-light bg-transparent" href="/products/{{$copylocation->product_id}}/edit" role="button">Edit</a>
-                            </div>
-                        </div>
+            
+                    
                     </div>
-                @endif
+                        @if ($invproduct->expiration_date<$red)
+                            <h1 class="warning">!</h1>
+                        @endif
+                </div>
             @endforeach
         </div>
     </form>

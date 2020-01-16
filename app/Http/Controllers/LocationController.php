@@ -8,6 +8,7 @@ use App\Location;
 use Illuminate\Support\Facades\Auth;
 use App\Product;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class LocationController extends Controller
 {
@@ -48,6 +49,9 @@ class LocationController extends Controller
 
         $currentLocation = Location::with('users')->where('id', $id)->first();
 
+        $red = Carbon::now();
+        $orange = Carbon::now()->addDays(5);
+
         if (Auth::user()->hasAnyLocations($currentLocation->id)) {
             return view('locations.show', [
 
@@ -58,11 +62,15 @@ class LocationController extends Controller
                 ->leftJoin('products','products.id','=','copy_product.product_id')
             ->get(),
 
-            'locations' => Location::where('id', $id)->get()
+            'locations' => Location::where('id', $id)->get(),
+
+            "red" => $red,
+            "orange" => $orange
 
             ]);
         } else {
             return redirect('home');
         }
+        
     }
 }
