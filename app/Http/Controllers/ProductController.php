@@ -20,13 +20,17 @@ class ProductController extends Controller
 
     public function index()
     {
+        $id = Auth::id();
+
         return view('products.index', [
-            'copylocations' => DB::table('locations')
+            'copylocations' => DB::table('users')
+                ->leftJoin('location_user', 'users.id','=','location_user.user_id')
+                ->leftJoin('locations','locations.id','=','location_user.location_id')
                 ->leftJoin('copy_location','locations.id','=','copy_location.location_id')
                 ->leftJoin('copies','copies.id','=','copy_location.copy_id')
                 ->leftJoin('copy_product', 'copies.id','=','copy_product.copy_id')
                 ->leftJoin('products','products.id','=','copy_product.product_id')
-                ->get()
+                ->where('location_user.user_id', $id)->get()
         ]);
     }
 

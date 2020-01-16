@@ -33,7 +33,7 @@ class LocationController extends Controller
         $user = Auth::user();
 
         $attributes = $request->validate([
-            'name' => ['required', 'string', 'unique:locations,name', 'max:255']
+            'name' => ['required', 'string', 'max:255']
         ]);
 
         $replace = ['de ', 'het ', 'een ', 'De ', 'Het ', 'Een ', "Mijn ", "mijn "];
