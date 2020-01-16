@@ -75,7 +75,7 @@
                 deleteButton[0].style.display = "none";
             }
             if(checked > 0){
-                deleteButton[0].style.display = "block";
+                deleteButton[0].style.display = "flex";
             }
         }
 
