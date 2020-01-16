@@ -16,7 +16,7 @@
 
                 @else
                 <div class="card mb-2">
-                    <div class="card-body bg-card">
+                    <div class="card-body ">
                         
                             @if ($copylocation->expiration_date<$red)
                             <div class="red"></div>

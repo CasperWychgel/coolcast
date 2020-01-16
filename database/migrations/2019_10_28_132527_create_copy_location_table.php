@@ -20,9 +20,9 @@ class CreateCopyLocationTable extends Migration
 
             $table->unsignedBigInteger('copy_id');
 
-            $table->foreign('location_id')->references('id')->on('locations');
+            $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
 
-            $table->foreign('copy_id')->references('id')->on('copies');
+            $table->foreign('copy_id')->references('id')->on('copies')->onDelete('cascade');
 
             $table->timestamps();
         });

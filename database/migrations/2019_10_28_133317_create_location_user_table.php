@@ -17,12 +17,23 @@ class CreateLocationuserTable extends Migration
         Schema::create('location_user', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('location_id');
-            $table->foreign('location_id')->references('id')->on('locations');
+            $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
 
             $table->timestamps();
         });
+
+        DB::table('location_user')->insert([
+            ['user_id' => '1','location_id' => '1'],
+            ['user_id' => '1','location_id' => '2'],
+            ['user_id' => '1','location_id' => '4'],
+            ['user_id' => '2','location_id' => '1'],
+            ['user_id' => '2','location_id' => '3'],
+            ['user_id' => '2','location_id' => '4'],
+
+        ]);
+
     }
 
     /**

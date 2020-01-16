@@ -23,6 +23,7 @@ class CreateLocationsTable extends Migration
             ['name' => 'Koelkast'],
             ['name' => 'Vriezer'],
             ['name' => 'Voorraadkast'],
+            ['name' => 'CMGT geheime voorraad'],
         ]);
     }
 

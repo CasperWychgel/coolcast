@@ -9,12 +9,16 @@
                 <p class="lead"></p>
             @endforeach
         </div>
+
+        @if($copylocations[0]->id != null)
         <div class="container-fluid">
             <div class="custom-control custom-checkbox editshow">
                 <input type="checkbox" class="custom-control-input selectall" name="selectall" id="selectall">
                 <label class="custom-control-label" for="selectall">Selecteer alle producten</label>
             </div>
         </div>
+        @endif
+
         <form method="post" id="deleteform">
             {{ csrf_field() }}
             <input type="hidden" name="_method" value="delete">
@@ -32,18 +36,15 @@
                     @else 
                         <div class="green"></div>
                     @endif
-                        <div class="card-body bg-card">
+                        <div class="card-body">
                             <div class="col d-flex justify-content-between">
                                 <h5 class="card-title">{{$copylocation->name}}</h5>
                                 <p class="card-text">{{$copylocation->expiration_date}}</p>
-                                <div class="editshow">
-                                    <i class="fas fa-trash"></i>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input selectbox" name="product[]" value="{{$copylocation->copy_id}}" id="{{$copylocation->copy_id}}">
-                                        <label class="custom-control-label" for="{{$copylocation->copy_id}}"></label>
-                                    </div>
-                                    {{--{{dd($copylocation)}}--}}
-                                    <a class="text-white btn btn-light bg-transparent" href="/products/{{$copylocation->copy_id}}/edit" role="button">Edit</a>
+                                <div class="mt-3 pl-5">
+                                    <input type="checkbox" class="selectbox custom-control-input  mt-1" name="product[]"
+                                           value="{{$copylocation->copy_id}}" id="{{$copylocation->copy_id}}">
+                                    <label class="custom-control-label mt-1" for="{{$copylocation->copy_id}}"></label>
+                                    <a class="text-white bg-transparent mt-1" href="/products/{{$copylocation->copy_id}}/edit"><img src="/img/edit.png" alt="" width="20" height="20" class="align-self-center center ml-4"></a>
                                 </div>
                             </div>
                         </div>
@@ -64,8 +65,7 @@
 
         let deleteButton = document.getElementsByClassName("deleteButton"); // deletebutton
         let checkbox = document.getElementsByClassName('selectbox'); //checkboxes
-        
-        console.log(checkbox[1].id) // manier om het ID te krijgen  
+
    
 
         for (let i = 0; i < checkbox.length; i++) {

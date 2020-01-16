@@ -25,9 +25,8 @@ class CreateUsersTable extends Migration
         });
 
         DB::table('users')->insert([
-            ['name' => 'John Doe','email' => 'john.doe@gmail.com','password' => '$2y$10$neCdIx2jPNopo1/E3HBZhul3ydVj53gyOFmfAIIMGOHArDYTUR9wy'],
-            ['name' => 'Test','email' => 'test@test.nl','password' => '$2y$10$odXzj0bYNBiBwDcQBEpB1.HgkzG1nY0oedG4DXrwBqZxLs5IUmZ2S'],
-            ['name' => 'Test2','email' => 'test2@test.nl','password' => '$2y$10$odXzj0bYNBiBwDcQBEpB1.HgkzG1nY0oedG4DXrwBqZxLs5IUmZ2S']
+            ['name' => 'Rick','email' => 'rick@gmail.com','password' => '$2y$10$neCdIx2jPNopo1/E3HBZhul3ydVj53gyOFmfAIIMGOHArDYTUR9wy'],
+            ['name' => 'Daniël','email' => 'daniël@gmail.com','password' => '$2y$10$neCdIx2jPNopo1/E3HBZhul3ydVj53gyOFmfAIIMGOHArDYTUR9wy'],
         ]);
     }
 

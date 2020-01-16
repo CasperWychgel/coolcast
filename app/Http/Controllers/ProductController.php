@@ -120,7 +120,7 @@ class ProductController extends Controller
 
     public function deleteall(Request $request)
     {
-        Locationproduct::whereIn('id', $request->input('product'))->delete();
+        Copy::whereIn('id', $request->input('product'))->delete();
         return redirect('/');
     }
 
