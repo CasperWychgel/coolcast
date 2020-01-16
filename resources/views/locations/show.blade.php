@@ -32,7 +32,7 @@
                     @else 
                         <div class="green"></div>
                     @endif
-                        <div class="card-body">
+                        <div class="card-body bg-card">
                             <div class="col d-flex justify-content-between">
                                 <h5 class="card-title">{{$copylocation->name}}</h5>
                                 <p class="card-text">{{$copylocation->expiration_date}}</p>
@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                         </div>
-                        @if ($invproduct->expiration_date<$red)
+                        @if ($copylocation->expiration_date<$red)
                             <h1 class="warning">!</h1>
                         @endif
                     </div>

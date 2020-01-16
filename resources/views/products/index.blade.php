@@ -6,12 +6,6 @@
             <h1 class="display-4 text-center">Al je producten op één plek</h1>
             <p class="lead text-center">Hieronder zie je een overzicht van alle producten in je huis.</p>
         </div>
-        <div class="container-fluid editshow">
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input selectall" name="selectall" id="selectall" >
-                <label class="custom-control-label" for="selectall">Selecteer alle producten</label>
-            </div>
-        </div>
     </div>
     <form method="post" id="deleteform">
         {{ csrf_field() }}
@@ -33,13 +27,8 @@
                         @endif
                         <h5 class="card-title">{{$copylocation->name}}</h5>
                         <p class="card-text">{{$copylocation->expiration_date}}</p>
-                        <div class="editshow">
-                            <i class="fas fa-trash"></i>
-                            <label for="danger" class="btn btn-danger">Verwijder<input type="checkbox" id="danger" name="product[]" value="{{$copylocation->product_id}}" class="badgebox selectbox"><span class="badge">&check;</span></label>
-                            <a class="text-white btn btn-light bg-transparent" href="/products/{{$copylocation->product_id}}/edit" role="button">Edit</a>
-                        </div>
                     </div>
-                    @if ($invproduct->expiration_date<$red)
+                    @if ($copylocation->expiration_date<$red)
                             <h1 class="warning">!</h1>
                         @endif
                 </div>
@@ -57,9 +46,5 @@
             </div>
         </div>
     </div>
-    <script>
-        $('.selectall').click(function () {
-            $('.selectbox').prop('checked',$(this).prop('checked'))
-        })
-    </script>
+
 @endsection
